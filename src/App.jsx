@@ -1,3 +1,4 @@
+import Service from "./Page/Service/Service"
 
 
 function App() {
@@ -70,6 +71,7 @@ function App() {
           </div>
         </div>
       </section>
+      <Service></Service>
     </div>
   )
 }
