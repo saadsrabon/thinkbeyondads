@@ -36,7 +36,7 @@ export default function Navbar() {
           <img
             className={`transition-all duration-300 ${scrolled ? 'w-20 h-20' : 'w-40 h-40'}`}
             src={MainLogo}
-            alt="Main Logo"
+            alt="Main Logo file"
           />
         </div>
 
