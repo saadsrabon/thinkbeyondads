@@ -78,7 +78,7 @@ const TextNavigationSlider = () => {
   return (
     <div
       id="services"
-      className="flex flex-col justify-between lg:flex-row max-w-[1240px] items-center gap-10 md:gap-10 lg:gap-3 mx-auto mt-[60px] lg:mt-[120px] lg:px-0 px-4 mb-12"
+      className="hidden md:flex flex-col justify-between lg:flex-row max-w-[1240px] items-center gap-10 md:gap-10 lg:gap-3 mx-auto mt-[60px] lg:mt-[120px] lg:px-0 px-4 mb-12"
     >
       <div className="w-full lg:w-[460px] lg:h-[441px] rounded-[20px]">
         <h1 className="font-serif text-[28px] md:text-[40px] lg:text-[64px] leading-[32px] lg:leading-[76.8px]">
