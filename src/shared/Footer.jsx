@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
 
         {/* Navigation */}
-        <div className="flex flex-col justify-between items-center space-y-3">
+        <div className="flex flex-col justify-between md:items-center space-y-3">
           <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">
             Quick Links
           </h3>
