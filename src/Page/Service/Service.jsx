@@ -14,7 +14,7 @@ const Service = () => {
                             Tailored to Fuel Your <br className="hidden md:block" />
                             Success.
                         </h1>
-                        <button className="border border-white text-white hover:bg-white hover:text-black transition-colors duration-300 py-3 px-12 rounded-full text-lg font-medium">
+                        <button className="border border-white text-white hover:bg-white hover:text-black transition-colors duration-300 py-3 px-12 rounded-full text-lg font-medium hover:cursor-pointer">
                             Contact Us
                         </button>
                     </div>
