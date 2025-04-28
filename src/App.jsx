@@ -2,6 +2,13 @@ import React, { useEffect, useRef } from "react";
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import AnimatedTestimonialsDemo from "./components/Testimonial";
+import WhatWeDo from "./pages/Whatwedo";
+import WhyChoose from "./pages/whyChoose";
+import Services from "./pages/Services";
+import AboutSection from "./pages/AboutUs";
+import ContactSection from "./pages/Contact";
+import CaseStudies from "./pages/CaseStudies";
+import Footer from "./shared/Footer";
 
 
 function App() {
@@ -89,7 +96,7 @@ function App() {
     sound.setBuffer(buffer);
     sound.setLoop(true);
     sound.setVolume(0.4);
-    sound.play();
+    // sound.play();
   });
 
   // Animate
@@ -136,6 +143,7 @@ function App() {
         <p
           ref={textRef}
           style={{
+            
             backgroundImage:
               "linear-gradient(90deg, #000 0%, #000 50%, #7b68ee 51%, #3498db 100%)",
             backgroundSize: "200% 100%",
@@ -160,26 +168,26 @@ function App() {
       <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl text-left relative z-10">
         <div className="bg-white p-4 rounded-lg shadow-sm">
           <h3 className="text-base font-bold text-[#023E8A] mb-1">
-            Scan the Internet
+            Clarity
           </h3>
           <p className="text-sm text-gray-600">
-            Search billions of sites in seconds to protect your brand.
+            Acquiring recurring customers and better data.
           </p>
         </div>
         <div className="bg-white p-4 rounded-lg shadow-sm">
           <h3 className="text-base font-bold text-[#023E8A] mb-1">
-            Run Similarity Reports
+            Conversation Infrastructure
           </h3>
           <p className="text-sm text-gray-600">
-            Instantly identify who's copying your creative or assets.
+            Optimized digital presence and funnel strategy.
           </p>
         </div>
         <div className="bg-white p-4 rounded-lg shadow-sm">
           <h3 className="text-base font-bold text-[#023E8A] mb-1">
-            Take Them Down
+            Scale
           </h3>
           <p className="text-sm text-gray-600">
-            DMCA takedown, cease & desist, or legal enforcement—done.
+            Systems and spend that growth with your business.
           </p>
         </div>
       </div>
@@ -194,10 +202,18 @@ function App() {
           <div className="h-10 w-20 bg-gray-200 rounded"></div>
           <div className="h-10 w-20 bg-gray-200 rounded"></div>
         </div>
+        
       </div>
     </section>
-
+    <AboutSection/>
+    <WhatWeDo/>
+    <Services/>
+    <WhyChoose/>
+    <CaseStudies/>
     <AnimatedTestimonialsDemo/>
+    <ContactSection/>
+    <Footer/>
+   
     </>
   );
 }

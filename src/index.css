@@ -18,4 +18,37 @@
       background-position: 400% 0;
     }
   }
+  .shimmer-bg {
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
   
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  @keyframes swap {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .animate-swap div:nth-child(odd) {
+    animation: swap 6s infinite ease-in-out;
+  }
+  .animate-swap div:nth-child(even) {
+    animation: swap 6s infinite ease-in-out reverse;
+  }
