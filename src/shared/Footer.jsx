@@ -10,7 +10,7 @@ export default function Footer() {
         {/* Brand */}
         <div className="flex flex-col justify-center items-start">
           <div>
-            <img className="w-30 h-30 object-cover -mt-10 -ml-4" src={FooterImage} alt="" />
+            <img className="w-30 h-30 object-cover -mt-10 -ml-3.5" src={FooterImage} alt="" />
           </div>
           <p className="text-sm text-gray-300 max-w-xs leading-relaxed">
             We engineer full-funnel growth systems that help high-LTV brands

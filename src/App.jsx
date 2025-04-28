@@ -125,7 +125,7 @@ function App() {
   
   return (
     <>
-    <section className="min-h-screen flex flex-col items-center justify-center text-center bg-[#F9FAFB] px-4 pt-32 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col items-center justify-center text-center bg-[#F9FAFB] px-4 pt-32 relative overflow-hidden mt-6">
       {/* Globe Background */}
       <div 
         ref={globeContainerRef} 
@@ -212,7 +212,6 @@ function App() {
     <CaseStudies/>
     <AnimatedTestimonialsDemo/>
     <ContactSection/>
-    <Footer/>
    
     </>
   );
