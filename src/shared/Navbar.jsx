@@ -12,7 +12,7 @@ export default function Navbar() {
         <ul className="hidden md:flex space-x-8 font-sans text-sm text-gray-700">
           <NavLink to="/" className="hover:text-[#0096C7] text-[1rem] cursor-pointer">Home</NavLink>
           <NavLink to="/services" className="hover:text-[#0096C7] text-[1rem] cursor-pointer">Services</NavLink>
-          <NavLink className="hover:text-[#0096C7] text-[1rem] cursor-pointer">Work</NavLink>
+          <NavLink to="/work" className="hover:text-[#0096C7] text-[1rem] cursor-pointer">Work</NavLink>
           <NavLink to="/about" className="hover:text-[#0096C7] text-[1rem] cursor-pointer">About</NavLink>
           <NavLink to="/contact" className="hover:text-[#0096C7] text-[1rem] cursor-pointer">Contact</NavLink>
         </ul>

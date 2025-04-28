@@ -26,7 +26,7 @@ export default function WhatWeDo() {
   };
 
   return (
-    <section className="bg-white dark:bg-gray-900 py-16 px-4 sm:px-8 lg:px-24">
+    <section className="bg-white dark:bg-gray-900 py-16 px-4 sm:px-8 lg:px-24 mt-10">
       <div className="max-w-6xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
