@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 
 const testimonials = [
   {
@@ -47,77 +46,95 @@ export default function AnimatedTestimonialsDemo() {
   };
 
   const isActive = (index) => index === active;
-
   const randomRotateY = () => Math.floor(Math.random() * 21) - 10;
 
   return (
-    <div className="mx-auto max-w-sm px-4 py-20 font-sans md:max-w-4xl md:px-8 lg:px-12 bg-[#F8F8F8]">
-      <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
-        <div className="relative h-80 w-full">
-          <AnimatePresence>
-            {testimonials.map((t, i) => (
-              <motion.div
-                key={t.src}
-                initial={{ opacity: 0, scale: 0.9, rotate: randomRotateY() }}
-                animate={{
-                  opacity: isActive(i) ? 1 : 0.7,
-                  scale: isActive(i) ? 1 : 0.95,
-                  rotate: isActive(i) ? 0 : randomRotateY(),
-                  zIndex: isActive(i) ? 40 : testimonials.length - i
-                }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="absolute inset-0 origin-bottom"
-              >
-                <img
-                  src={t.src}
-                  alt={t.name}
-                  className="h-full w-full rounded-3xl object-cover object-center"
-                />
-              </motion.div>
-            ))}
-          </AnimatePresence>
+    <div className="mx-auto max-w-6xl px-4 py-20 font-sans md:px-8 lg:px-12">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
+        {/* Left Section: Headline */}
+        <div className="text-center md:text-left space-y-6">
+          <h2 className="text-3xl font-extrabold text-[#1C1C1E]">
+            What Our Clients Say
+          </h2>
+          <p className="text-lg text-gray-600">
+            Still not convinced? Let our satisfied clients do the talking. These testimonials reflect how we help businesses grow.
+          </p>
         </div>
-        <div className="flex flex-col justify-between py-4">
-          <motion.div
-            key={active}
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -20, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            <h3 className="text-2xl font-bold text-[#1C1C1E]">{testimonials[active].name}</h3>
-            <p className="text-sm text-gray-500">{testimonials[active].designation}</p>
-            <motion.p className="mt-8 text-lg text-[#1C1C1E]/80">
-              {testimonials[active].quote.split(" ").map((word, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ filter: "blur(10px)", opacity: 0, y: 5 }}
-                  animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2, delay: 0.02 * i }}
-                  className="inline-block"
+
+        {/* Right Section: Testimonials */}
+        <div className="relative grid grid-cols-1 gap-8">
+          <div className="relative h-80 w-full">
+            <AnimatePresence>
+              {testimonials.map((t, i) => (
+                <motion.div
+                  key={t.src}
+                  initial={{ opacity: 0, scale: 0.9, rotate: randomRotateY() }}
+                  animate={{
+                    opacity: isActive(i) ? 1 : 0.7,
+                    scale: isActive(i) ? 1 : 0.95,
+                    rotate: isActive(i) ? 0 : randomRotateY(),
+                    zIndex: isActive(i) ? 40 : testimonials.length - i
+                  }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="absolute inset-0 origin-bottom"
                 >
-                  {word}&nbsp;
-                </motion.span>
+                  <img
+                    src={t.src}
+                    alt={t.name}
+                    className="h-full w-full rounded-3xl object-cover object-center"
+                  />
+                </motion.div>
               ))}
-            </motion.p>
-          </motion.div>
-          <div className="flex gap-4 pt-12 md:pt-0">
-            <button
-              onClick={handlePrev}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-[#D9D9D9] hover:scale-105"
+            </AnimatePresence>
+          </div>
+
+          <div className="flex flex-col justify-between py-4">
+            <motion.div
+              key={active}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -20, opacity: 0 }}
+              transition={{ duration: 0.2 }}
             >
-              <IconArrowLeft className="h-5 w-5 text-[#1C1C1E] group-hover/button:rotate-12 transition-transform" />
-            </button>
-            <button
-              onClick={handleNext}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-[#D9D9D9] hover:scale-105"
-            >
-              <IconArrowRight className="h-5 w-5 text-[#1C1C1E] group-hover/button:-rotate-12 transition-transform" />
-            </button>
+              <h3 className="text-xl font-bold text-[#1C1C1E]">
+                {testimonials[active].name}
+              </h3>
+              <p className="text-sm text-gray-500">
+                {testimonials[active].designation}
+              </p>
+              <motion.p className="mt-4 text-base text-[#1C1C1E]/80">
+                {testimonials[active].quote.split(" ").map((word, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ filter: "blur(10px)", opacity: 0, y: 5 }}
+                    animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
+                    transition={{ duration: 0.2, delay: 0.015 * i }}
+                    className="inline-block"
+                  >
+                    {word}&nbsp;
+                  </motion.span>
+                ))}
+              </motion.p>
+            </motion.div>
+            <div className="flex gap-4 pt-6">
+              <button
+                onClick={handlePrev}
+                className="group/button flex h-8 w-8 items-center justify-center rounded-full bg-[#D9D9D9] hover:scale-105 transition"
+              >
+                ←
+              </button>
+              <button
+                onClick={handleNext}
+                className="group/button flex h-8 w-8 items-center justify-center rounded-full bg-[#D9D9D9] hover:scale-105 transition"
+              >
+                →
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
 }
+

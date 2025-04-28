@@ -1,109 +1,157 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+"use client";
 
+import React, { useMemo, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Mousewheel } from "swiper/modules";
+import { motion } from "framer-motion";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/mousewheel";
 
-const services = [
-  {
-    title: "Strategic Media Buying",
-    desc: "Meta, Google, YouTube ads engineered for ROAS, not just reach.",
-    image: "/images/media-buying.jpg",
-    color: "#2BB3A2",
-    detail: "Our media buyers combine targeting precision with creative iteration to generate sustainable, scalable growth across Meta, Google, and YouTube. We don't just buy ads — we engineer campaigns that convert."
-  },
-  {
-    title: "Funnel Strategy & Development",
-    desc: "High-converting flows built around clarity, logic, and urgency.",
-    image: "/images/funnel-strategy.jpg",
-    color: "#FFA133",
-    detail: "We audit, blueprint, and develop full-funnel journeys that reduce friction and increase urgency. Built for your buyer psychology — not templates."
-  },
-  {
-    title: "Conversion Infrastructure",
-    desc: "Landing pages and on-site experience optimized for conversion.",
-    image: "/images/conversion-infra.jpg",
-    color: "#1A2238",
-    detail: "We craft high-performance landing pages and UX flows that turn traffic into customers — rooted in copy psychology, speed, and brand design."
-  },
-  {
-    title: "Conversion Tracking & Analytics",
-    desc: "Real-time insights into where attention turns into action.",
-    image: "/images/analytics.jpg",
-    color: "#D9D9D9",
-    detail: "Know exactly what works — and why. We implement analytics and attribution to measure the true impact of every dollar spent."
-  },
-];
+const TextNavigationSlider = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef(null);
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 }
-};
+  const sections = [
+    "Overview",
+    "Media Buying",
+    "Funnel Strategy",
+    "Infrastructure",
+    "Tracking",
+    "Add-ons"
+  ];
 
-const detailAnim = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: 20 }
-};
+  const slides = [
+    {
+      section: "Overview",
+      title: "Performance. Clarity. Scalability.",
+      content:
+        "All our services are engineered to drive measurable results. We help businesses grow by aligning design, technology, and strategy for scalable success.",
+      image: "https://placehold.co/600x400",
+    },
+    {
+      section: "Media Buying",
+      title: "Strategic Media Buying",
+      content:
+        "We plan and manage ad spend to maximize ROI through data-driven targeting across Google, Meta, LinkedIn, and more.",
+      image: "https://placehold.co/600x400",
+    },
+    {
+      section: "Funnel Strategy",
+      title: "Funnel Strategy & Development",
+      content:
+        "We architect high-converting funnels tailored to your customer journey — from awareness to acquisition and retention.",
+      image: "https://placehold.co/600x400",
+    },
+    {
+      section: "Infrastructure",
+      title: "Conversion Infrastructure",
+      content:
+        "We build the backend that converts — landing pages, checkout flows, CRM syncing, and performance-focused architecture.",
+      image: "https://placehold.co/600x400",
+    },
+    {
+      section: "Tracking",
+      title: "Conversion Tracking & Analytics",
+      content:
+        "Gain clarity with precise tracking, attribution, and real-time dashboards so you know what's working and why.",
+      image: "https://placehold.co/600x400",
+    },
+    {
+      section: "Add-ons",
+      title: "Optional Add-ons",
+      content:
+        "Enhance your stack with CRM integration, custom lead magnets, and creative production — everything you need to scale efficiently.",
+      image: "https://placehold.co/600x400",
+    }
+  ];
 
-export default function ServicesPage() {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const handleTextNavigationClick = (index) => {
+    const sectionFirstIndex = slides.findIndex(
+      (slide) => slide.section === sections[index]
+    );
+    if (sectionFirstIndex !== -1 && swiperRef.current) {
+      swiperRef.current.slideTo(sectionFirstIndex);
+    }
+  };
 
   return (
-    <section className="bg-[#F8F8F8] py-20 px-6 md:px-20">
-      <div className="text-center mb-16">
-        <motion.h2
-          className="text-4xl md:text-5xl font-serif text-[#1C1C1E]"
-          initial="hidden"
-          animate="visible"
-          variants={fadeInUp}
-          transition={{ duration: 0.8 }}
-        >
-          Our Services
-        </motion.h2>
-        <motion.p
-          className="mt-4 text-lg text-[#1C1C1E]/80 max-w-2xl mx-auto"
-          initial="hidden"
-          animate="visible"
-          variants={fadeInUp}
-          transition={{ delay: 0.2, duration: 0.8 }}
-        >
-          Designed to scale what works. Rooted in data. Built for brands with momentum.
-        </motion.p>
+    <div
+      id="services"
+      className="flex flex-col justify-between lg:flex-row max-w-[1240px] items-center gap-10 md:gap-10 lg:gap-3 mx-auto mt-[60px] lg:mt-[120px] lg:px-0 px-4"
+    >
+      <div className="w-full lg:w-[460px] lg:h-[441px] rounded-[20px]">
+        <h1 className="font-serif text-[28px] md:text-[40px] lg:text-[64px] leading-[32px] lg:leading-[76.8px]">
+          Services
+        </h1>
+        <div className="flex flex-col justify-center space-y-1 md:space-y-3 lg:space-y-4 mt-[24px]">
+          {sections.map((section, index) => (
+            <motion.button
+              key={index}
+              onClick={() => handleTextNavigationClick(index)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`text-left transition-all duration-300 text-black flex items-center text-lg ${
+                slides[activeIndex].section === section
+                  ? "ms-1 text-[24px] md:text-[28px] lg:text-[32px] font-bold"
+                  : "text-[20px] md:text-[26px] lg:text-[30px]"
+              }`}
+            >
+              <span
+                className={`${
+                  slides[activeIndex].section === section
+                    ? "h-[20px] md:h-[27px] w-[3px] md:w-[5px] me-1 bg-[#F04B23]"
+                    : ""
+                }`}
+              ></span>
+              {section}
+            </motion.button>
+          ))}
+        </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-10">
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            className="group bg-white rounded-2xl p-8 shadow-md transition duration-300 relative overflow-hidden hover:shadow-2xl hover:scale-[1.02]"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-            variants={fadeInUp}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            onClick={() => setActiveIndex(index === activeIndex ? null : index)}
-          >
-            <div className="shimmer absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none z-0"></div>
-            <img src={service.image} alt={service.title} className="rounded-xl mb-5 w-full h-48 object-cover relative z-10" />
-            <h3 className="text-2xl font-serif mb-2 relative z-10" style={{ color: service.color }}>
-              {service.title}
-            </h3>
-            <p className="text-[#1C1C1E] text-base leading-relaxed relative z-10">
-              {service.desc}
-            </p>
-
-            <AnimatePresence>
-              {activeIndex === index && (
-                <motion.div
-                  className="mt-4 p-4 bg-[#F8F8F8] border-t border-[#D9D9D9] rounded-b-xl text-sm text-[#1C1C1E]/90"
-                  {...detailAnim}
-                >
-                  {service.detail}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        ))}
+      <div className="w-full lg:w-[743px] lg:h-[730px] overflow-hidden">
+        <Swiper
+          direction="vertical"
+          spaceBetween={30}
+          slidesPerView={1}
+          mousewheel={{ forceToAxis: true, releaseOnEdges: true }}
+          modules={[Navigation, Mousewheel]}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+          className="w-full lg:h-[780px]"
+        >
+          {slides.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.5 }}
+                className="bg-[#023e8a] text-white w-full h-full lg:h-[730px] rounded-[20px]"
+              >
+                <div className="lg:p-[56px] md:p-14 p-4">
+                  <h2 className="font-serif text-[26px] md:text-[36px] lg:text-[48px] leading-[40px] lg:leading-[57.6px]">
+                    {slide.title}
+                  </h2>
+                  <p className="text-[16px] md:text-[18px] lg:text-[20px] leading-[20px] lg:leading-[30px] mt-6">
+                    {slide.content}
+                  </p>
+                  <div className="mt-6">
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className="rounded-xl w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default TextNavigationSlider;
