@@ -159,7 +159,7 @@ function App() {
           buying, funnel optimization, and conversion-driven web
           design—ThinkBeyondAds is your growth partner.
         </p>
-        <button className="mt-8 bg-gradient-to-r from-[#023E8A] to-[#0096C7] text-white font-bold uppercase tracking-wide py-3 px-6 rounded-lg shadow-md hover:scale-105 transition-transform">
+        <button onClick={() => window.open('https://calendly.com/thinkbeyondads/30min')}  className="mt-8 bg-gradient-to-r from-[#023E8A] to-[#0096C7] text-white font-bold uppercase tracking-wide py-3 px-6 rounded-lg shadow-md hover:scale-105 transition-transform">
           Book a Call — ThinkBeyondAds
         </button>
       </div>

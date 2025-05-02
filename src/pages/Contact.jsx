@@ -32,13 +32,17 @@ export default function ContactSection() {
             <div className="flex flex-col items-start">
   <p className="text-gray-600 dark:text-gray-300 mb-4">Pick a time that works best for you:</p>
   <a
-    href="https://calendly.com/your-schedule"
+    href="https://calendly.com/thinkbeyondads/30min"
     target="_blank"
     rel="noopener noreferrer"
     className="inline-block bg-[#F04B23] text-white font-medium py-2 px-6 rounded-md shadow-md hover:bg-[#d93c17] transition transform hover:scale-105"
   >
     Open Booking Calendar
   </a>
+  <div className="mt-4 w-full h-[400px] overflow-hidden rounded-lg shadow-lg">
+
+  <iframe width="500" height="400" src="https://calendly.com/thinkbeyondads/30min" frameborder="0"></iframe>
+  </div>
 </div>
           </div>
 

@@ -124,7 +124,7 @@ export default function Navbar() {
   )}
 </AnimatePresence>
         {/* Book Call Button (always visible) */}
-        <button className="hidden md:block bg-[#0096C7] text-white px-4 py-2 rounded font-bold uppercase text-xs shadow hover:bg-[#023E8A] transition">
+        <button onClick={() => window.open('https://calendly.com/thinkbeyondads/30min')} className="hidden md:block bg-[#0096C7] text-white px-4 py-2 rounded font-bold uppercase text-xs shadow hover:bg-[#023E8A] transition">
           Book Call
         </button>
       </nav>
