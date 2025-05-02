@@ -7,11 +7,21 @@ import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/mousewheel";
-
+import { useEffect } from "react";
 const TextNavigationSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // You can tune breakpoint
+    };
+  
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Initial check
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   const sections = [
     "Overview",
     "Media Buying",
@@ -78,7 +88,7 @@ const TextNavigationSlider = () => {
   return (
     <div
       id="services"
-      className="hidden md:flex flex-col justify-between lg:flex-row max-w-[1240px] items-center gap-10 md:gap-10 lg:gap-3 mx-auto mt-[60px] lg:mt-[120px] lg:px-0 px-4 mb-12"
+      className="flex flex-col lg:flex-row justify-between max-w-[1240px] items-center gap-10 mx-auto mt-12 px-4 lg:px-0 mb-12"
     >
       <div className="w-full lg:w-[460px] lg:h-[441px] rounded-[20px]">
         <h1 className="font-serif text-[28px] md:text-[40px] lg:text-[64px] leading-[32px] lg:leading-[76.8px]">
@@ -110,9 +120,9 @@ const TextNavigationSlider = () => {
         </div>
       </div>
 
-      <div className="w-full lg:w-[743px] lg:h-[730px] overflow-hidden">
+      <div className="w-full h-auto lg:w-[743px] lg:h-[730px] overflow-hidden">
         <Swiper
-          direction="vertical"
+          direction={isMobile ? "horizontal" : "vertical"}
           spaceBetween={30}
           slidesPerView={1}
           mousewheel={{ forceToAxis: true, releaseOnEdges: true }}
@@ -128,7 +138,7 @@ const TextNavigationSlider = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.5 }}
-                className="bg-[#023e8a] text-white w-full h-full lg:h-[730px] rounded-[20px]"
+                className="bg-[#023e8a] text-white w-full  lg:h-[730px] rounded-[20px]"
               >
                 <div className="lg:p-[56px] md:p-14 p-4">
                   <h2 className="font-serif text-[26px] md:text-[36px] lg:text-[48px] leading-[40px] lg:leading-[57.6px]">

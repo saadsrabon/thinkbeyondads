@@ -17,13 +17,13 @@ createRoot(document.getElementById('root')).render(
     <Routes>
       <Route path="/" element={<App />} />
      
-      <Route path="/services" element={<Services/>} />
+      <Route path="/services" element={<div className='mt-40'>  <Services/></div>} />
       
-      <Route path="/work" element={<WhatWeDo/>} />
+      <Route path="/work" element={<div className='mt-40'>  <WhatWeDo/></div>} />
       
-      <Route path="/about" element={<AboutSection/>} />
+      <Route path="/about" element={<div className='mt-40'>  <AboutSection/></div>} />
       
-      <Route path="/contact" element={<Contact/>} />
+      <Route path="/contact" element={<div className='mt-40'>  <Contact/></div> } />
     </Routes>
       <Footer></Footer>
     </BrowserRouter>
