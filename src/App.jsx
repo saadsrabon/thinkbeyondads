@@ -193,7 +193,7 @@ function App() {
       </div>
 
       {/* Client Logos or Testimonials */}
-      <div className="mt-20 w-full max-w-5xl text-center relative z-10">
+      {/* <div className="mt-20 w-full max-w-5xl text-center relative z-10">
         <h2 className="text-xl font-bold text-gray-800 mb-4 uppercase tracking-wide">
           Trusted by
         </h2>
@@ -203,7 +203,7 @@ function App() {
           <div className="h-10 w-20 bg-gray-200 rounded"></div>
         </div>
         
-      </div>
+      </div> */}
     </section>
     <AboutSection/>
     <WhatWeDo/>

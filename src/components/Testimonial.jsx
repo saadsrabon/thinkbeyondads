@@ -63,7 +63,7 @@ export default function AnimatedTestimonialsDemo() {
 
         {/* Right Section: Testimonials */}
         <div className="relative grid grid-cols-1 gap-8">
-          <div className="relative h-80 w-full">
+          <div className="relative h-80 md:w-full w-[70%]  mx-auto">
             <AnimatePresence>
               {testimonials.map((t, i) => (
                 <motion.div

@@ -53,10 +53,10 @@ export default function AboutSection() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="group relative overflow-hidden bg-white/70 dark:bg-white/5 border border-gray-200 dark:border-gray-800 backdrop-blur-md p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] before:scale-150 group-hover:before:translate-x-[100%] before:transition-transform before:duration-700 before:ease-in-out"
             >
-              <h3 className="text-xl font-bold text-[#023e8a] mb-3">
+              <h3 className="text-xl font-bold text-[#023e8a] dark:text-[#F04B23] mb-3">
                 {item.title}
               </h3>
-              <p className="text-[17px] leading-relaxed tracking-wide relative italic pl-6 bg-clip-text text-transparent bg-gradient-to-r from-[#F04B23] via-[#0096c7] to-[#023e8a] animate-[shimmer_4s_ease-in-out_infinite]">
+              <p className="text-[17px] leading-relaxed tracking-wide relative italic pl-6 bg-clip-text text-transparent bg-gradient-to-r from-[#F04B23] via-[#0096c7] to-[#023e8a] dark:text-white animate-[shimmer_4s_ease-in-out_infinite]">
                 {item.text}
               </p>
             </motion.div>

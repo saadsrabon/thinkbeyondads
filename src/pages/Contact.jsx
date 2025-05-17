@@ -27,7 +27,7 @@ export default function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 text-left">
           <div className="bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-semibold text-[#023e8a] mb-4">Schedule a Call</h3>
+            <h3 className="text-xl font-semibold text-[#023e8a] dark:text-[#F04B23] mb-4">Schedule a Call</h3>
             {/* Replace below iframe with your calendar booking URL (Calendly, TidyCal, etc.) */}
             <div className="flex flex-col items-start">
   <p className="text-gray-600 dark:text-gray-300 mb-4">Pick a time that works best for you:</p>
@@ -39,7 +39,7 @@ export default function ContactSection() {
   >
     Open Booking Calendar
   </a>
-  <div className="mt-4 w-full h-[400px] overflow-hidden rounded-lg shadow-lg">
+  <div className="mt-4  hidden md:visible w-full h-[400px] overflow-hidden rounded-lg shadow-lg">
 
   <iframe width="500" height="400" src="https://calendly.com/thinkbeyondads/30min" frameborder="0"></iframe>
   </div>
@@ -48,7 +48,7 @@ export default function ContactSection() {
 
           <div className="space-y-8">
             <div className="bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-md">
-              <h3 className="text-xl font-semibold text-[#023e8a] mb-4">Contact Info</h3>
+              <h3 className="text-xl font-semibold text-[#023e8a] dark:text-[#F04B23] mb-4">Contact Info</h3>
               <div className="flex items-start gap-3 mb-3">
                 <Mail className="text-[#F04B23]" />
                 <span className="text-gray-700 dark:text-gray-300">hello@yourdomain.com</span>
@@ -60,7 +60,7 @@ export default function ContactSection() {
             </div>
 
             <div className="bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-md">
-              <h3 className="text-xl font-semibold text-[#023e8a] mb-4">FAQ</h3>
+              <h3 className="text-xl font-semibold text-[#023e8a] dark:text-[#F04B23] mb-4">FAQ</h3>
               <div className="space-y-4">
   {[{
     q: "Do you work with startups?",
@@ -79,7 +79,7 @@ export default function ContactSection() {
       transition={{ duration: 0.4, delay: i * 0.1 }}
       className="bg-white dark:bg-white/5 p-4 rounded-md border border-gray-100 dark:border-gray-700 shadow-sm"
     >
-      <p className="font-semibold text-[#023e8a]">{item.q}</p>
+      <p className="font-semibold text-[#023e8a] dark:text-[#F04B23]">{item.q}</p>
       <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">{item.a}</p>
     </motion.div>
   ))}
