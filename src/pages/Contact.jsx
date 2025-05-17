@@ -39,7 +39,7 @@ export default function ContactSection() {
   >
     Open Booking Calendar
   </a>
-  <div className="mt-4  hidden md:visible w-full h-[400px] overflow-hidden rounded-lg shadow-lg">
+  <div className="mt-4  hidden md:block w-full h-[400px] overflow-hidden rounded-lg shadow-lg">
 
   <iframe width="500" height="400" src="https://calendly.com/thinkbeyondads/30min" frameborder="0"></iframe>
   </div>
