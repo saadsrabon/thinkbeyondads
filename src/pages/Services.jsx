@@ -37,42 +37,42 @@ const TextNavigationSlider = () => {
       title: "Performance. Clarity. Scalability.",
       content:
         "All our services are engineered to drive measurable results. We help businesses grow by aligning design, technology, and strategy for scalable success.",
-      image: "https://placehold.co/600x400",
+      image: "https://i.ibb.co/ZpVqD9cf/vecteezy-a-person-holding-up-glasses-with-a-cityscape-in-the-background-60203803.jpg"
     },
     {
       section: "Media Buying",
       title: "Strategic Media Buying",
       content:
         "We plan and manage ad spend to maximize ROI through data-driven targeting across Google, Meta, LinkedIn, and more.",
-      image: "https://placehold.co/600x400",
+      image: "https://i.ibb.co/trgdm9C/marketing-ideas-share-research-planning-concept.jpg",
     },
     {
       section: "Funnel Strategy",
       title: "Funnel Strategy & Development",
       content:
         "We architect high-converting funnels tailored to your customer journey — from awareness to acquisition and retention.",
-      image: "https://placehold.co/600x400",
+      image: "https://i.ibb.co/BH83zHbS/front-view-businessman-with-colorful-cones-representing-growth.jpg",
     },
     {
       section: "Infrastructure",
       title: "Conversion Infrastructure",
       content:
         "We build the backend that converts — landing pages, checkout flows, CRM syncing, and performance-focused architecture.",
-      image: "https://placehold.co/600x400",
+      image: "https://i.ibb.co/whBkW0v7/man-holding-smartphone-with-apartment-buildings-hologram.jpg",
     },
     {
       section: "Tracking",
       title: "Conversion Tracking & Analytics",
       content:
         "Gain clarity with precise tracking, attribution, and real-time dashboards so you know what's working and why.",
-      image: "https://placehold.co/600x400",
+      image: "https://i.ibb.co/HDQ0P0tD/man-working-with-infographics-indoors.jpg",
     },
     {
       section: "Add-ons",
       title: "Optional Add-ons",
       content:
         "Enhance your stack with CRM integration, custom lead magnets, and creative production — everything you need to scale efficiently.",
-      image: "https://placehold.co/600x400",
+      image: "https://i.ibb.co/pBP4t8f1/istockphoto-1369075175-612x612.jpg",
     }
   ];
 
