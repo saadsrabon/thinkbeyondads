@@ -28,6 +28,7 @@ const caseStudySteps = [
       "Expanded service offerings",
       "Equity deal with Momentum Multifamily"
     ],
+    press:"https://www.momentummultifamily.com/resources/momentum-multifamily-forms-strategic-partnership-with-door-step-solutions-expanding-resident-service-offerings-to-portfolio-and-industry",
     bg: "#415a77"
   },
   {
@@ -106,6 +107,9 @@ export default function LockedHorizontalTimeline() {
       // Only handle wheel events if we're in the timeline section
       if (!isElementInViewport(scrollContainerRef.current)) return;
       
+      // Check if the target is or is inside an interactive element (like links)
+      if (isInteractiveElement(e.target)) return;
+      
       e.preventDefault();
       
       // Debounce scroll events
@@ -141,6 +145,22 @@ export default function LockedHorizontalTimeline() {
         rect.right <= window.innerWidth
       );
     }
+    
+    // Utility function to check if element is interactive
+    function isInteractiveElement(el) {
+      const interactiveElements = ['A', 'BUTTON', 'INPUT', 'SELECT', 'TEXTAREA'];
+      let current = el;
+      
+      // Check the element and its parents
+      while (current) {
+        if (interactiveElements.includes(current.tagName)) {
+          return true;
+        }
+        current = current.parentElement;
+      }
+      
+      return false;
+    }
 
     // Lock scroll when timeline is in view
     const handleScroll = () => {
@@ -174,14 +194,23 @@ export default function LockedHorizontalTimeline() {
 
   // Handle touch events for mobile
   const handleTouchStart = (e) => {
+    // Don't capture touch events on interactive elements
+    if (isInteractiveElement(e.target)) return;
+    
     setTouchStart(e.targetTouches[0].clientX);
   };
 
   const handleTouchMove = (e) => {
+    // Don't capture touch events on interactive elements
+    if (isInteractiveElement(e.target)) return;
+    
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
-  const handleTouchEnd = () => {
+  const handleTouchEnd = (e) => {
+    // Don't process touch events on interactive elements
+    if (isInteractiveElement(e.target)) return;
+    
     if (isTransitioning) return;
     
     const now = Date.now();
@@ -205,6 +234,22 @@ export default function LockedHorizontalTimeline() {
         setTimeout(() => setIsTransitioning(false), 500);
       }
     }
+  };
+  
+  // Helper function to check if element is interactive
+  const isInteractiveElement = (el) => {
+    const interactiveElements = ['A', 'BUTTON', 'INPUT', 'SELECT', 'TEXTAREA'];
+    let current = el;
+    
+    // Check the element and its parents
+    while (current) {
+      if (interactiveElements.includes(current.tagName)) {
+        return true;
+      }
+      current = current.parentElement;
+    }
+    
+    return false;
   };
 
   // Navigation functions
@@ -230,16 +275,16 @@ export default function LockedHorizontalTimeline() {
   return (
     <section
       ref={containerRef}
-      className="relative"
+      className="relative pointer-events-auto"
       style={{ height: "100vh" }} // Fixed height for the timeline section
     >
       <div 
         ref={scrollContainerRef}
-        className="sticky top-0 h-screen overflow-hidden bg-black text-white"
+        className="sticky top-0 h-screen overflow-hidden bg-black pointer-events-auto text-white"
       >
-        {/* Mobile touch handlers */}
+        {/* Touch handler - MODIFIED to allow links to work */}
         <div 
-          className="absolute inset-0 z-10 touch-handler"
+          className="absolute inset-0 z-10 touch-handler pointer-events-none"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -283,6 +328,7 @@ export default function LockedHorizontalTimeline() {
                     y: activeIndex === index ? 0 : 20
                   }}
                   transition={{ duration: 0.5, delay: 0.1 }}
+                  className="relative z-20 pointer-events-auto" // Added z-index and pointer-events
                 >
                   <p className="text-sm uppercase tracking-widest text-gray-400 mb-2">{step.label}</p>
                   <h2 className="text-4xl font-bold text-white">{step.title}</h2>
@@ -294,6 +340,17 @@ export default function LockedHorizontalTimeline() {
                       ))}
                     </ul>
                   )}
+                  {step.press && (
+                    <a
+                      href={step.press}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-block text-blue-400 hover:underline cursor-pointer z-40 relative"
+                      aria-label="Read the press release"
+                    >
+                      Read the press release
+                    </a>
+                  )}
                 </motion.div>
               </div>
             </div>
@@ -301,7 +358,7 @@ export default function LockedHorizontalTimeline() {
         </motion.div>
         
         {/* Progress Indicator */}
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
           {caseStudySteps.map((_, index) => (
             <button
               key={index}
@@ -316,7 +373,7 @@ export default function LockedHorizontalTimeline() {
         </div>
         
         {/* Progress Bar */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gray-800">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gray-800 z-30">
           <motion.div 
             className="h-full bg-white"
             initial={{ width: "0%" }}
@@ -328,7 +385,7 @@ export default function LockedHorizontalTimeline() {
         </div>
         
         {/* Instructional text */}
-        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center">
+        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center z-30">
           <p className="text-sm text-gray-400">
             {activeIndex === caseStudySteps.length - 1 
               ? "Scroll down to continue" 
