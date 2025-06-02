@@ -9,13 +9,16 @@ import Navbar from './shared/Navbar.jsx';
 import Footer from './shared/Footer.jsx';
 import AboutSection from './pages/AboutUs.jsx';
 import WhatWeDo from './pages/Whatwedo.jsx';
+import SplashPage from './splash.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Navbar />
     <Routes>
-      <Route path="/" element={<App />} />
+      {/* <Route path="/" element={<App />} /> */}
+      <Route path="/" element={<SplashPage />} />
+
      
       <Route path="/services" element={<div className='mt-40'>  <Services/></div>} />
       
