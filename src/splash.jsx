@@ -29,12 +29,12 @@ export default function SplashPage() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
         >
-          <button
+          {/* <button
             className="text-lg px-6 py-3 rounded-2xl font-semibold bg-white text-black hover:bg-gray-200"
             onClick={() => window.location.reload()}
           >
             Retry <RefreshCcw className="ml-2 w-5 h-5" />
-          </button>
+          </button> */}
         </motion.div>
       </div>
     </div>
