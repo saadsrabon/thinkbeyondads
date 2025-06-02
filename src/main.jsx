@@ -14,7 +14,7 @@ import SplashPage from './splash.jsx';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <Navbar />
+      {/* <Navbar /> */}
     <Routes>
       {/* <Route path="/" element={<App />} /> */}
       <Route path="/" element={<SplashPage />} />
@@ -28,7 +28,7 @@ createRoot(document.getElementById('root')).render(
       
       <Route path="/contact" element={<div className='mt-40'>  <Contact/></div> } />
     </Routes>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </BrowserRouter>
   </StrictMode>,
 )
