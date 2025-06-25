@@ -24,14 +24,14 @@ export default function AboutSection() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-14"
         >
-          We’re not just a team — we’re architects of impact. With clarity, data, and intention, we help brands move forward with confidence.
+          We’re not just a team — we’re architects of impact. With clarity, data, and intention, we help businesses move forward with confidence and velocity.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
           {[
             {
               title: "Brand Mission",
-              text: "To empower ambitious teams with systems and strategy that fuel sustainable growth.",
+              text: "To empower businesses with systems and strategy that fuel sustainable growth.",
             },
             {
               title: "Why We Exist",
@@ -76,7 +76,7 @@ export default function AboutSection() {
             Book a Discovery Call
           </a>
         </motion.div>
-      <div className='mt-20 text-center text-sm text-gray-500 dark:text-gray-400 italic'>– Signed, The Founder</div>
+      <div className='mt-20 text-center text-sm text-gray-500 dark:text-gray-400 italic'>– Signed, Our Founders</div>
 </div> {/* Background flare */}
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[90vw] h-[90vw] bg-gradient-radial from-[#0096c720] to-transparent rounded-full blur-3xl z-0"></div>
     

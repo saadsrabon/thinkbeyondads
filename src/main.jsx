@@ -10,6 +10,7 @@ import Footer from './shared/Footer.jsx';
 import AboutSection from './pages/AboutUs.jsx';
 import WhatWeDo from './pages/Whatwedo.jsx';
 import SplashPage from './splash.jsx';
+import Portfolio from './pages/Portfolio.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -27,6 +28,7 @@ createRoot(document.getElementById('root')).render(
       <Route path="/about" element={<div className='mt-40'>  <AboutSection/></div>} />
       
       <Route path="/contact" element={<div className='mt-40'>  <Contact/></div> } />
+      <Route path="/portfolio" element={<div className='mt-36'> <Portfolio/></div>} />
     </Routes>
       <Footer></Footer>
     </BrowserRouter>

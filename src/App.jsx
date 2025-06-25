@@ -135,7 +135,7 @@ function App() {
       {/* Hero Content */}
       <div className="relative z-10">
         <div className="mb-4 text-sm font-semibold text-blue-700">
-          ✨ Inspired Strategy, Clear Messaging & Conversion Design
+          ✨ Inspired Strategy, Targeted Marketing, & Conversion Design
         </div>
         <h1 className="text-4xl md:text-6xl font-serif text-gray-900 max-w-4xl leading-tight">
           Ads Are Just the Beginning
@@ -187,7 +187,7 @@ function App() {
             Scale
           </h3>
           <p className="text-sm text-gray-600">
-            Systems and spend that growth with your business.
+            Systems and spend that grow your business.
           </p>
         </div>
       </div>

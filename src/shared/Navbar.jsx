@@ -51,10 +51,10 @@ export default function Navbar() {
             `hover:text-[#0096C7] text-[1rem] cursor-pointer ${isActive ? "text-[#0096C7] font-bold" : "text-gray-700"
             }`
           }>Services</NavLink>
-          <NavLink to="/work" className={({ isActive }) =>
+          <NavLink to="/portfolio" className={({ isActive }) =>
             `hover:text-[#0096C7] text-[1rem] cursor-pointer ${isActive ? "text-[#0096C7] font-bold" : "text-gray-700"
             }`
-          }>Case Studies</NavLink>
+          }>Portfolio</NavLink>
           <NavLink to="/about" className={({ isActive }) =>
             `hover:text-[#0096C7] text-[1rem] cursor-pointer ${isActive ? "text-[#0096C7] font-bold" : "text-gray-700"
             }`
@@ -81,11 +81,11 @@ export default function Navbar() {
       transition={{ duration: 0.3 }}
       className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 text-gray-800 text-xl font-semibold"
     >
-      {['/', '/services', '/work', '/about', '/contact'].map((path, index) => {
+      {['/', '/services', '/portfolio', '/about', '/contact'].map((path, index) => {
         const labelMap = {
           '/': 'Home',
           '/services': 'Services',
-          '/work': 'Work',
+          '/portfolio': 'Portfolio',
           '/about': 'About',
           '/contact': 'Contact',
         };

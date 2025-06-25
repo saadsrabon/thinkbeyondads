@@ -60,7 +60,7 @@ export default function WhatWeDo() {
                     {service}
                   </p>
                   <p className="text-neutral-300 text-sm">
-                    We use proven systems and performance tracking to ensure this service aligns with your growth goals.
+                    We use proven systems and performance tracking to ensure our services align with your growth goals.
                   </p>
                 </div>
               </div>
