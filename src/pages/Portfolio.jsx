@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight, TrendingUp, Users, Target, Zap, Award, BarChart3, Eye, DollarSign, Clock, CheckCircle, Building, Handshake } from 'lucide-react';
+import p from '../assets/1.jpeg'
+import p1 from '../assets/2.jpeg'
+import p2 from '../assets/3.jpeg'
+import p3 from '../assets/4.jpeg'
 
 const Portfolio = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -79,6 +83,16 @@ const Portfolio = () => {
           quote: "The targeting made all the difference. We stopped wasting money on the wrong audience and finally saw real, qualified leads coming in.",
           author: "Home Health Aide Business Owner",
           results: ["51x More Leads", "96% Lower CPL", "$14.76 Cost Per Lead"]
+        }
+      },
+      {
+        type: "images",
+        title: "Case Study Images",
+        content: {
+          images: [
+
+            p, p1, p2, p3
+]
         }
       }
     ]
@@ -414,6 +428,23 @@ const Portfolio = () => {
                 </div>
               </div>
             )}
+          </div>
+
+        );
+      case "images":
+        return (
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold text-white mb-4">Case Study Images</h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols
+-3 gap-6">
+              {slide.content.images.map((image, index) => (
+                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden">
+                  <img src={image} alt={`Case Study Image ${index + 1}`} className="w-full h-64 object-cover" />
+                </div>
+              ))}
+            </div>
           </div>
         );
 
