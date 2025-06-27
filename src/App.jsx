@@ -209,7 +209,7 @@ function App() {
     <WhatWeDo/>
     <Services/>
     <WhyChoose/>
-    <CaseStudies/>
+    {/* <CaseStudies/> */}
     <AnimatedTestimonialsDemo/>
     <ContactSection/>
    

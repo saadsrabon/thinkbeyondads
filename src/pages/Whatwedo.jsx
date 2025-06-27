@@ -26,13 +26,13 @@ export default function WhatWeDo() {
   };
 
   return (
-    <section className="bg-white dark:bg-gray-900 py-16 px-4 sm:px-8 lg:px-24 mt-10">
+    <section className="bg-white py-24 px-4 sm:px-8 lg:px-24 mt-10">
       <div className="max-w-6xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-serif text-gray-900 dark:text-white mb-4"
+          className="text-4xl md:text-5xl font-serif mb-4"
         >
           What We Do
         </motion.h2>
@@ -40,7 +40,7 @@ export default function WhatWeDo() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto"
+          className="text-lg text-black  max-w-2xl mx-auto"
         >
           Our services are designed to scale your brand through clarity, performance, and strategy.
         </motion.p>
