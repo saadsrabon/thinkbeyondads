@@ -4,14 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 const testimonials = [
   {
     quote: "The attention to detail and innovative features have completely transformed our workflow.",
-    name: "Sarah Chen",
-    designation: "Product Manager at TechFlow",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/9/99/TechFlow_logo.svg"
+    name: "Joshua Wilson",
+    designation: "CEO at Doorstep Solutions",
+    logo: "https://doorstepsolutions.org/wp-content/uploads/2024/06/cropped-PNG.png"
   },
   {
     quote: "Implementation was seamless and the results exceeded our expectations.",
-    name: "Michael Rodriguez",
-    designation: "CTO at InnovateSphere",
+    name: "Home Health Aide Business",
+    designation: "CTO at Home Health Aide Business",
     logo: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Innovate_logo.svg"
   },
   {

@@ -345,7 +345,7 @@ const Portfolio = () => {
               <h2 className="text-3xl font-bold text-white mb-4">The Challenge</h2>
               <p className="text-blue-100 text-lg leading-relaxed">{slide.content.description}</p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1  md:grid-cols-2 gap-4">
               {slide.content.metrics.map((metric, index) => (
                 <div key={index} className="bg-red-500/20 border border-red-400/30 rounded-xl p-6 text-center">
                   <div className="text-2xl font-bold text-red-300 mb-2">{metric.value}</div>
