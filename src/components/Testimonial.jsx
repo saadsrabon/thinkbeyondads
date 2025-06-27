@@ -89,7 +89,7 @@ export default function TestimonialCards() {
         </AnimatePresence>
       </div>
 
-      <div className="flex justify-center gap-4 mt-6">
+      {/* <div className="flex justify-center gap-4 mt-6">
         <button
           onClick={handlePrev}
           className="h-10 w-10 rounded-full bg-gray-200 hover:bg-gray-300 text-xl transition"
@@ -102,7 +102,7 @@ export default function TestimonialCards() {
         >
           →
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
