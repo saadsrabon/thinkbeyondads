@@ -21,14 +21,14 @@ createRoot(document.getElementById('root')).render(
       {/* <Route path="/" element={<SplashPage />} /> */}
 
      
-      <Route path="/services" element={<div className='mt-40'>  <Services/></div>} />
+      <Route path="/services" element={<div className=''>  <Services/></div>} />
       
-      <Route path="/work" element={<div className='mt-40'>  <WhatWeDo/></div>} />
+      <Route path="/work" element={<div className=''>  <WhatWeDo/></div>} />
       
-      <Route path="/about" element={<div className='mt-40'>  <AboutSection/></div>} />
+      <Route path="/about" element={<div className=''>  <AboutSection/></div>} />
       
-      <Route path="/contact" element={<div className='mt-40'>  <Contact/></div> } />
-      <Route path="/portfolio" element={<div className='mt-36'> <Portfolio/></div>} />
+      <Route path="/contact" element={<div className='mt-'>  <Contact/></div> } />
+      <Route path="/portfolio" element={<div className=''> <Portfolio/></div>} />
     </Routes>
       <Footer></Footer>
     </BrowserRouter>
