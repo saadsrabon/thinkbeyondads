@@ -1,5 +1,6 @@
 import BrandCarousel from "./BrandCarousel";
-import TestimonialsSlider from "./TestimonialsSlider";
+import TestimonialsSlider from "./TestimonialSlider";
+
 
 export default function TrustSection() {
   return (
