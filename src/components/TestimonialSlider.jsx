@@ -4,11 +4,46 @@ import { motion, AnimatePresence } from "framer-motion";
 const testimonials = [
   {
     quote:
-      "Blackhawk is an excellent marketing team: always professional, responsive, and open.",
-    name: "Marc Tafuro",
-    company: "Fidelity Express",
+      "Think Beyond Ads helped us double our ROI with their expert Google and Meta Ads strategies!",
+    name: "Rocco",
+    company: "Rocc Solid Construction (Founder)",
   },
-  // Add more testimonials if needed
+  {
+    quote:
+      "Our brand visibility has skyrocketed thanks to the team’s tailored ad campaigns.",
+    name: "Sami",
+    company: "Motor City (Founder)",
+  },
+  {
+    quote:
+      "The results speak for themselves—our leads increased by 40% within the first month!",
+    name: "AJ",
+    company: "QuietBounce (Founder)",
+  },
+  {
+    quote:
+      "Think Beyond Ads takes the guesswork out of digital advertising and delivers real results.",
+    name: "Juan",
+    company: "Homewatch Caregivers (Founder)",
+  },
+  {
+    quote:
+      "We saw immediate growth in our online sales, all thanks to their precision-targeted ads.",
+    name: "Marilyn",
+    company: "The Queens Corner Charity (Founder)",
+  },
+  {
+    quote:
+      "Their attention to detail and ability to optimize campaigns has transformed our marketing.",
+    name: "Marilyn",
+    company: "Royalty Health Care (Founder)",
+  },
+  {
+    quote:
+      "Working with Think Beyond Ads has been a game changer for our business growth.",
+    name: "Valeria",
+    company: "Nails&Blinks (Founder)",
+  },
 ];
 
 export default function TestimonialsSlider() {
@@ -31,11 +66,11 @@ export default function TestimonialsSlider() {
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="text-4xl text-violet-400 mb-4">❝</div>
+          <div className="text-4xl text-white-400 mb-4">❝</div>
           <p className="text-white text-xl font-semibold max-w-2xl mx-auto">
             "{testimonials[index].quote}"
           </p>
-          <p className="text-sm text-gray-400 mt-2">
+          <p className="text-sm text-gray-300 mt-2">
             {testimonials[index].name}, {testimonials[index].company}
           </p>
         </motion.div>

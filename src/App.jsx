@@ -9,6 +9,7 @@ import AboutSection from "./pages/AboutUs";
 import ContactSection from "./pages/Contact";
 import CaseStudies from "./pages/CaseStudies";
 import Footer from "./shared/Footer";
+import TrustSection from "./components/TrustSection";
 
 
 function App() {
@@ -205,6 +206,7 @@ function App() {
         
       </div> */}
     </section>
+    <TrustSection/>
     <AboutSection/>
     <WhatWeDo/>
     <Services/>
