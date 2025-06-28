@@ -66,11 +66,11 @@ export default function TestimonialsSlider() {
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="text-4xl text-white-400 mb-4">❝</div>
-          <p className="text-white text-xl font-semibold max-w-2xl mx-auto">
+          <div className="text-4xl bg-gradient-to-b from-[#023E8A] to-[#0096C7] text-transparent bg-clip-text  mb-4">❝</div>
+          <p className="bg-gradient-to-b from-[#023E8A] to-[#0096C7] text-transparent bg-clip-text  text-xl font-semibold max-w-2xl mx-auto">
             "{testimonials[index].quote}"
           </p>
-          <p className="text-sm text-gray-300 mt-2">
+          <p className="text-sm text-gray-300 mt-2 bg-gradient-to-b from-[#023E8A] to-[#0096C7] text-transparent bg-clip-text ">
             {testimonials[index].name}, {testimonials[index].company}
           </p>
         </motion.div>
