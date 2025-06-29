@@ -256,13 +256,21 @@ const AboutUs = () => {
         </div>
 
         {/* Bottom CTA Section */}
-        <div className="text-center mt-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 md:p-12 text-white">
+        <div className="text-center mt-16 bg-gradient-to-b from-[#023E8A] to-[#0096C7] rounded-2xl p-8 md:p-12 text-white">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Ready to Think Beyond Ads?
           </h2>
           <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
             At Think Beyond Ads, we don't just run ads—we design performance-driven strategies exclusively for Meta and Google Ads that empower your brand to grow and succeed.
           </p>
+        </div>
+        <div className="text-center mt-8">
+          <button
+            onClick={() => window.open('https://calendly.com/thinkbeyondads/30min')}
+            className="bg-gradient-to-r from-[#023E8A] to-[#0096C7] text-white font-bold uppercase tracking-wide py-3 px-6 rounded-lg shadow-md hover:scale-105 transition-transform"
+          >
+            Book a Call — Think Beyond Ads
+          </button>
         </div>
       </div>
     </div>
