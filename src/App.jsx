@@ -10,6 +10,7 @@ import ContactSection from "./pages/Contact";
 import CaseStudies from "./pages/CaseStudies";
 import Footer from "./shared/Footer";
 import TrustSection from "./components/TrustSection";
+import AboutUsHero from "./pages/AboutHero";
 
 
 function App() {
@@ -207,12 +208,12 @@ function App() {
       </div> */}
     </section>
     <TrustSection/>
-    <AboutSection/>
-    <WhatWeDo/>
+    <AboutUsHero/>
+    {/* <WhatWeDo/> */}
     <Services/>
     <WhyChoose/>
     {/* <CaseStudies/> */}
-    <AnimatedTestimonialsDemo/>
+    {/* <AnimatedTestimonialsDemo/> */}
     <ContactSection/>
    
     </>
