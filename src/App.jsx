@@ -1,21 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import AnimatedTestimonialsDemo from "./components/Testimonial";
-import WhatWeDo from "./pages/Whatwedo";
-import WhyChoose from "./pages/whyChoose";
-import Services from "./pages/Services";
-import AboutSection from "./pages/AboutUs";
-import ContactSection from "./pages/Contact";
-import CaseStudies from "./pages/CaseStudies";
-import Footer from "./shared/Footer";
 import TrustSection from "./components/TrustSection";
 import AboutUsHero from "./pages/AboutHero";
-
+import WhyChooseModern from "./pages/whyChoose";
+import ContactSection from "./pages/Contact";
 
 function App() {
   const textRef = useRef(null);
-  const globeContainerRef = useRef(null);
   
   // Text shine effect
   useEffect(() => {
@@ -39,183 +29,120 @@ function App() {
     };
   }, []);
   
-  // Globe effect
- useEffect(() => {
-  const container = globeContainerRef.current;
-  if (!container) return;
-
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-  container.appendChild(renderer.domElement);
-
-  const geometry = new THREE.SphereGeometry(5, 32, 32);
-  const material = new THREE.MeshBasicMaterial({
-    color: 0x0096C7,
-    wireframe: true,
-    transparent: true,
-    opacity: 0.09,
-  });
-  const globe = new THREE.Mesh(geometry, material);
-  scene.add(globe);
-
-  const glowGeometry = new THREE.SphereGeometry(5.2, 32, 32);
-  const glowMaterial = new THREE.MeshBasicMaterial({
-    color: 0x023E8A,
-    transparent: true,
-    opacity: 0.05,
-  });
-  const glowMesh = new THREE.Mesh(glowGeometry, glowMaterial);
-  scene.add(glowMesh);
-
-  camera.position.z = 15;
-
-  // OrbitControls
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.05;
-  controls.enableZoom = false;
-  controls.autoRotate = true;
-  controls.autoRotateSpeed = 0.5;
-
-  // Resize handling
-  const resizeRenderer = () => {
-    const { width, height } = container.getBoundingClientRect();
-    renderer.setSize(width, height);
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-  };
-
-  resizeRenderer();
-  window.addEventListener('resize', resizeRenderer);
-
-  // Audio setup
-  const listener = new THREE.AudioListener();
-  camera.add(listener);
-  const sound = new THREE.Audio(listener);
-  const audioLoader = new THREE.AudioLoader();
-  audioLoader.load('/audio/ambient.mp3', (buffer) => {
-    sound.setBuffer(buffer);
-    sound.setLoop(true);
-    sound.setVolume(0.4);
-    // sound.play();
-  });
-
-  // Animate
-  const animate = () => {
-    requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
-  };
-
-  animate();
-
-  return () => {
-    window.removeEventListener('resize', resizeRenderer);
-    if (container.contains(renderer.domElement)) {
-      container.removeChild(renderer.domElement);
-    }
-    geometry.dispose();
-    material.dispose();
-    glowGeometry.dispose();
-    glowMaterial.dispose();
-    controls.dispose();
-    sound.stop();
-  };
-}, []);
-
-  
   return (
     <>
-    <section className="min-h-screen flex flex-col items-center justify-center text-center bg-[#F9FAFB] px-4 pt-32 relative overflow-hidden mt-6">
-      {/* Globe Background */}
-      <div 
-        ref={globeContainerRef} 
-        className="absolute hidden lg:block inset-0 z-0 opacity-80"
-      />
-      
-      {/* Hero Content */}
-      <div className="relative z-10">
-        <div className="mb-4 text-sm font-semibold text-blue-700">
-          ✨ Inspired Strategy, Targeted Marketing, & Conversion Design
-        </div>
-        <h1 className="text-4xl md:text-6xl font-serif text-gray-900 max-w-4xl leading-tight">
-          Ads Are Just the Beginning
-        </h1>
-        <p
-          ref={textRef}
-          style={{
-            
-            backgroundImage:
-              "linear-gradient(90deg, #000 0%, #000 50%, #7b68ee 51%, #3498db 100%)",
-            backgroundSize: "200% 100%",
-            backgroundPosition: "var(--x, 0) var(--y, 0)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            color: "transparent",
-            transition: "background-position 0.05s ease",
-          }}
-          className="text-lg md:text-xl text-gray-700 mt-4 max-w-2xl font-sans"
-        >
-          We don't just run ads—we engineer growth systems. Strategic media
-          buying, funnel optimization, and conversion-driven web
-          design—ThinkBeyondAds is your growth partner.
-        </p>
-        <button onClick={() => window.open('https://calendly.com/thinkbeyondads/30min')}  className="mt-8 bg-gradient-to-r from-[#023E8A] to-[#0096C7] text-white font-bold uppercase tracking-wide py-3 px-6 rounded-lg shadow-md hover:scale-105 transition-transform">
-          Book a Call — ThinkBeyondAds
-        </button>
-      </div>
-
-      {/* Features */}
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl text-left relative z-10">
-        <div className="bg-white p-4 rounded-lg shadow-sm">
-          <h3 className="text-base font-bold text-[#023E8A] mb-1">
-            Clarity
-          </h3>
-          <p className="text-sm text-gray-600">
-            Acquiring recurring customers and better data.
-          </p>
-        </div>
-        <div className="bg-white p-4 rounded-lg shadow-sm">
-          <h3 className="text-base font-bold text-[#023E8A] mb-1">
-            Conversation Infrastructure
-          </h3>
-          <p className="text-sm text-gray-600">
-            Optimized digital presence and funnel strategy.
-          </p>
-        </div>
-        <div className="bg-white p-4 rounded-lg shadow-sm">
-          <h3 className="text-base font-bold text-[#023E8A] mb-1">
-            Scale
-          </h3>
-          <p className="text-sm text-gray-600">
-            Systems and spend that grow your business.
-          </p>
-        </div>
-      </div>
-
-      {/* Client Logos or Testimonials */}
-      {/* <div className="mt-20 w-full max-w-5xl text-center relative z-10">
-        <h2 className="text-xl font-bold text-gray-800 mb-4 uppercase tracking-wide">
-          Trusted by
-        </h2>
-        <div className="flex justify-center gap-10 flex-wrap">
-          <div className="h-10 w-20 bg-gray-200 rounded"></div>
-          <div className="h-10 w-20 bg-gray-200 rounded"></div>
-          <div className="h-10 w-20 bg-gray-200 rounded"></div>
+      <section className="min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-br from-white via-gray-50 to-orange-50 px-4  relative overflow-hidden ">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+          <div className="absolute top-20 right-10 w-72 h-72 bg-teal-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
         </div>
         
-      </div> */}
-    </section>
-    <TrustSection/>
-    <AboutUsHero/>
-    {/* <WhatWeDo/> */}
-    <Services/>
-    <WhyChoose/>
-    {/* <CaseStudies/> */}
-    {/* <AnimatedTestimonialsDemo/> */}
-    <ContactSection/>
-   
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-5xl mx-auto">
+          {/* Badge */}
+          <div className="mb-6 inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-orange-500 to-teal-500 text-white text-sm font-semibold shadow-lg">
+            <span className="mr-2">🚀</span>
+            A Leading Digital Marketing Agency Fueling Business Growth
+          </div>
+          
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 max-w-6xl leading-tight mb-6">
+            Done the 
+            <span className="relative">
+              <span className="bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent"> Right Way</span>
+              <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-teal-500 rounded-full"></div>
+            </span>
+          </h1>
+          
+          {/* Description */}
+          <p className="text-xl md:text-2xl text-gray-700 mt-6 max-w-4xl mx-auto leading-relaxed font-medium">
+            Welcome to ThinkBeyondAds, where we turn your advertising into a growth engine. We specialize in expertly crafted Meta and Google Ads that drive real, measurable results.
+          </p>
+          
+          <p className="text-lg md:text-xl text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed">
+            Our team creates high-performance lead generation systems, turning your ad spend into a flood of qualified leads and sales. Focus on your business while we handle the rest.
+          </p>
+          
+          {/* Signature Statement */}
+          <div className="mt-8 mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+              We Don't Run Ads. 
+              <span className="italic bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent ml-2">
+                We Grow Businesses.
+              </span>
+            </h2>
+          </div>
+          
+          {/* CTA Button */}
+          <button 
+            onClick={() => window.open('https://calendly.com/thinkbeyondads/30min')}  
+            className="mt-8 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 transform"
+          >
+            Book a Call to Unlock Your Ad Potential
+          </button>
+          
+          {/* Secondary CTA for underperforming ads */}
+          <div className="mt-12 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 max-w-3xl mx-auto">
+            <h3 className="text-xl font-bold text-gray-900 mb-3">
+              Are your Google and Meta Ads underperforming?
+            </h3>
+            <p className="text-gray-700 mb-4 leading-relaxed">
+              You've been working with a "guru" or agency for a while, but your ROI still isn't where it should be... Maybe your ads have plateaued, and you're fed up with empty promises and the constant "just stay the course" advice.
+            </p>
+            <p className="text-lg font-semibold text-gray-900 mb-4">
+              It's time to make your Google and Meta Ads work harder for you.
+            </p>
+            <div className="text-center">
+              <p className="text-orange-600 font-bold text-lg mb-3">Ready to see real results?</p>
+              <button 
+                onClick={() => window.open('https://calendly.com/thinkbeyondads/30min')}
+                className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                Book a Call to Unlock Your Ad Potential
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Stats Section */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl text-center relative z-10">
+          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+            <div className="text-4xl font-bold bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent mb-2">
+              4-6X
+            </div>
+            <p className="text-gray-700 font-medium">
+              The average ROI we see across our advertising accounts
+            </p>
+          </div>
+          
+          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+            <div className="text-4xl font-bold bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent mb-2">
+              20%
+            </div>
+            <p className="text-gray-700 font-medium">
+              Average increase to monthly revenue we see when running Google & Meta ads
+            </p>
+          </div>
+          
+          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+            <div className="text-4xl font-bold bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent mb-2">
+              300+
+            </div>
+            <p className="text-gray-700 font-medium">
+              Businesses we have helped increase revenue & grow their brand awareness through ads
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      {/* Keep your existing components */}
+      <TrustSection/>
+      <AboutUsHero/>
+      {/* <Services/> */}
+      <WhyChooseModern/>
+      <ContactSection/>
     </>
   );
 }
