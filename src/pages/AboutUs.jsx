@@ -32,7 +32,7 @@ const AboutUs = () => {
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-12  mb-20">
           {/* Left Column - Content */}
           <div className="space-y-8">
             {/* Our Past */}
