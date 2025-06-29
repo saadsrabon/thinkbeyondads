@@ -11,7 +11,7 @@ export default function Navbar() {
 
   const testimonials = [
     {
-      content: "Our brand visibility has skyrocketed thanks to the team’s tailored ad campaigns.",
+      content: "Our brand visibility has skyrocketed thanks to the team's tailored ad campaigns.",
       name: "Sami",
       role: "Founder - Motor City"
     },
@@ -67,7 +67,7 @@ export default function Navbar() {
       {/* Fixed Top Bar */}
       <div className="fixed top-0 left-0 w-full z-50">
         {/* Testimonial Bar */}
-        <div className="bg-gradient-to-b from-[#023E8A] to-[#0096C7] text-white w-full py-2 px-6 sm:px-12 overflow-hidden">
+        <div className="bg-bg-dark text-white w-full py-2 px-6 sm:px-12 overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -77,8 +77,8 @@ export default function Navbar() {
               transition={{ duration: 0.6 }}
               className="text-center max-w-4xl mx-auto"
             >
-              <span className="text-sm sm:text-md italic">“{testimonials[index].content}”</span>
-              <span className="mt-2 text-xs sm:text-base text-gray-300 ml-2">
+              <span className="text-sm sm:text-md italic">"{testimonials[index].content}"</span>
+              <span className="mt-2 text-xs sm:text-base text-white/80 ml-2">
                 – {testimonials[index].name}, {testimonials[index].role}
               </span>
             </motion.div>
@@ -100,36 +100,36 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex space-x-8 font-sans text-sm text-gray-700">
+          <ul className="hidden md:flex space-x-8 font-sans text-sm text-[#2C3E50]">
             <NavLink to="/" className={({ isActive }) =>
-              `hover:text-[#0096C7] text-[1rem] cursor-pointer ${isActive ? "text-[#0096C7] font-bold" : "text-gray-700"
+              `hover:text-[#FF8C42] text-[1rem] cursor-pointer transition-colors duration-300 ${isActive ? "text-[#FF8C42] font-bold" : "text-[#2C3E50]"
               }`
             }>Home</NavLink>
             <NavLink to="/services" className={({ isActive }) =>
-              `hover:text-[#0096C7] text-[1rem] cursor-pointer ${isActive ? "text-[#0096C7] font-bold" : "text-gray-700"
+              `hover:text-[#FF8C42] text-[1rem] cursor-pointer transition-colors duration-300 ${isActive ? "text-[#FF8C42] font-bold" : "text-[#2C3E50]"
               }`
             }>Services</NavLink>
             <NavLink to="/portfolio" className={({ isActive }) =>
-              `hover:text-[#0096C7] text-[1rem] cursor-pointer ${isActive ? "text-[#0096C7] font-bold" : "text-gray-700"
+              `hover:text-[#FF8C42] text-[1rem] cursor-pointer transition-colors duration-300 ${isActive ? "text-[#FF8C42] font-bold" : "text-[#2C3E50]"
               }`
             }>Portfolio</NavLink>
             <NavLink to="/about" className={({ isActive }) =>
-              `hover:text-[#0096C7] text-[1rem] cursor-pointer ${isActive ? "text-[#0096C7] font-bold" : "text-gray-700"
+              `hover:text-[#FF8C42] text-[1rem] cursor-pointer transition-colors duration-300 ${isActive ? "text-[#FF8C42] font-bold" : "text-[#2C3E50]"
               }`
             }>About</NavLink>
             <NavLink to="/contact" className={({ isActive }) =>
-              `hover:text-[#0096C7] text-[1rem] cursor-pointer ${isActive ? "text-[#0096C7] font-bold" : "text-gray-700"
+              `hover:text-[#FF8C42] text-[1rem] cursor-pointer transition-colors duration-300 ${isActive ? "text-[#FF8C42] font-bold" : "text-[#2C3E50]"
               }`
             }>Contact</NavLink>
           </ul>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden text-3xl cursor-pointer text-gray-800" onClick={toggleMenu}>
+          <div className="md:hidden text-3xl cursor-pointer text-[#2C3E50]" onClick={toggleMenu}>
             {menuOpen ? <FiX /> : <FiMenu />}
           </div>
 
           {/* Book Call Button */}
-          <button onClick={() => window.open('https://calendly.com/thinkbeyondads/30min')} className="hidden md:block bg-[#0096C7] text-white px-4 py-2 rounded font-bold uppercase text-xs shadow hover:bg-[#023E8A] transition">
+          <button onClick={() => window.open('https://calendly.com/thinkbeyondads/30min')} className="hidden md:block bg-gradient-to-r from-[#FF8C42] to-[#E6672A] hover:from-[#E6672A] hover:to-[#FF8C42] text-white px-4 py-2 rounded font-bold uppercase text-xs shadow hover:shadow-lg transition-all duration-300">
             Book Call
           </button>
         </nav>
@@ -147,7 +147,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 text-gray-800 text-xl font-semibold"
+            className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 text-[#2C3E50] text-xl font-semibold"
           >
             {['/', '/services', '/portfolio', '/about', '/contact'].map((path, index) => {
               const labelMap = {
@@ -168,7 +168,7 @@ export default function Navbar() {
                     to={path}
                     onClick={() => setMenuOpen(false)}
                     className={({ isActive }) =>
-                      `cursor-pointer transition-colors duration-300 hover:text-[#0096C7] ${isActive ? 'text-[#0096C7] font-bold' : 'text-gray-800'
+                      `cursor-pointer transition-colors duration-300 hover:text-[#FF8C42] ${isActive ? 'text-[#FF8C42] font-bold' : 'text-[#2C3E50]'
                       }`
                     }
                   >
@@ -181,7 +181,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="mt-12 text-gray-500 hover:text-red-500 text-sm underline"
+              className="mt-12 text-[#6C757D] hover:text-[#DC3545] text-sm underline transition-colors duration-300"
               onClick={() => setMenuOpen(false)}
             >
               Close Menu
