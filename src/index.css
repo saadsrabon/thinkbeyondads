@@ -238,3 +238,6 @@
 .body-sm {
   @apply text-sm leading-normal font-[var(--font-family-primary)];
 }
+body {
+  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900
+}
