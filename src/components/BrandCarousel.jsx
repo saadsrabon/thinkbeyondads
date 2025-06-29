@@ -47,7 +47,7 @@ export default function BrandCarousel() {
         }}
       >
         {[...logos, ...logos].map((logo, idx) => (
-          <img key={idx} src={logo} alt="brand" loading="lazy" className="h-24 opacity-80 object-fit" />
+          <img key={idx} src={logo} alt="brand" loading="lazy" className="h-12 opacity-80 object-fit" />
         ))}
       </motion.div>
     </div>
