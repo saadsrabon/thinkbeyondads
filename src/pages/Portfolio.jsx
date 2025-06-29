@@ -661,7 +661,7 @@ const Portfolio = () => {
           <p className=" mb-8 text-lg">
             Stop guessing. Start generating real leads with proven strategies.
           </p>
-          <button className="bg-gradient-to-b from-[#023E8A] to-[#0096C7] text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all hover:scale-105">
+          <button  onClick={() => window.open('https://calendly.com/thinkbeyondads/30min')} className="bg-gradient-to-b from-[#023E8A] to-[#0096C7] text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all hover:scale-105">
             Book Your Free Strategy Call
           </button>
         </div>
