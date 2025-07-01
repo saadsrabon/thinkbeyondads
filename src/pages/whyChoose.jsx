@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { Check, ArrowDown, Sparkles } from "lucide-react";
 
 const benefits = [
@@ -52,18 +52,24 @@ export default function WhyChooseModern() {
   });
 
   useEffect(() => {
+    let ticking = false;
     const unsubscribe = scrollYProgress.onChange((progress) => {
-      // Calculate which step should be active based on scroll progress
-      const stepProgress = progress * benefits.length;
-      const newActiveStep = Math.floor(stepProgress);
-      
-      if (newActiveStep !== activeStep && newActiveStep >= 0 && newActiveStep < benefits.length) {
-        setActiveStep(newActiveStep);
-      }
-      
-      // Reset when scrolled past
-      if (progress < 0.1) {
-        setActiveStep(-1);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const stepProgress = progress * benefits.length;
+          const newActiveStep = Math.floor(stepProgress);
+
+          if (newActiveStep !== activeStep && newActiveStep >= 0 && newActiveStep < benefits.length) {
+            setActiveStep(newActiveStep);
+          }
+
+          if (progress < 0.1) {
+            setActiveStep(-1);
+          }
+
+          ticking = false;
+        });
+        ticking = true;
       }
     });
 
@@ -71,9 +77,9 @@ export default function WhyChooseModern() {
   }, [scrollYProgress, activeStep]);
 
   return (
-    <div ref={containerRef}>
-      {/* Original Intro Section */}
-      <section className="bg-gradient-to-br from-purple-900/20 via-purple-800/10 to-pink-900/20 py-42 px-4 sm:px-6 lg:px-12 relative overflow-hidden">
+    <div ref={containerRef} className="translate-z-0 will-change-transform">
+      {/* Intro Section */}
+      <section className="bg-gradient-to-br from-purple-900/20 via-purple-800/10 to-pink-900/20 py-42 px-4 sm:px-6 lg:px-12 relative overflow-hidden md:will-change-transform">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -96,9 +102,6 @@ export default function WhyChooseModern() {
             </p>
           </motion.div>
 
-
-
-          {/* Scroll Prompt */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -118,13 +121,12 @@ export default function WhyChooseModern() {
         </div>
       </section>
 
-      {/* Sequential Reveal Sections */}
+      {/* Benefit Sections */}
       {benefits.map((item, index) => (
         <section
           key={index}
-          className={`min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 relative overflow-hidden bg-gradient-to-br ${item.bgGradient} dark:from-gray-900 dark:via-gray-800 dark:to-gray-900`}
+          className={`min-h-[80vh] md:min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 relative md:overflow-hidden overflow-visible bg-gradient-to-br ${item.bgGradient}`}
         >
-          {/* Animated Background Elements */}
           <div className="absolute inset-0 overflow-hidden">
             <motion.div
               animate={{
@@ -154,20 +156,18 @@ export default function WhyChooseModern() {
                 y: activeStep >= index ? 0 : 50,
                 scale: activeStep >= index ? 1 : 0.9
               }}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 ease: "easeOut",
                 delay: activeStep === index ? 0.2 : 0
               }}
-              className="text-center"
+              className="text-center will-change-transform"
             >
-              {/* Step Indicator */}
               <div className="flex justify-center mb-8">
                 <div className={`relative w-20 h-20 rounded-full bg-gradient-to-r ${item.gradient} p-1`}>
                   <div className="w-full h-full bg-white dark:bg-gray-900 rounded-full flex items-center justify-center relative">
                     <span className="text-3xl">{item.icon}</span>
-                    
-                    {/* Animated Ring */}
+
                     {activeStep === index && (
                       <>
                         <motion.div
@@ -189,7 +189,6 @@ export default function WhyChooseModern() {
                 </div>
               </div>
 
-              {/* Content */}
               <motion.div
                 animate={{
                   scale: activeStep === index ? 1 : 0.95,
@@ -199,20 +198,19 @@ export default function WhyChooseModern() {
                 <h2 className={`text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent leading-tight`}>
                   {item.title}
                 </h2>
-                
+
                 <p className="text-2xl md:text-3xl text-bg-accent dark:text-gray-300 mb-12 leading-relaxed max-w-4xl mx-auto font-light">
                   {item.description}
                 </p>
-                
-                {/* Detailed Info Card */}
+
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
-                  animate={{ 
+                  animate={{
                     opacity: activeStep === index ? 1 : 0,
                     y: activeStep === index ? 0 : 30
                   }}
                   transition={{ delay: 0.4, duration: 0.6 }}
-                  className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-200/50 dark:border-gray-600/50 max-w-4xl mx-auto"
+                  className="bg-white/70 md:bg-white/80 dark:bg-gray-800/70 md:dark:bg-gray-800/80 backdrop-blur-md md:backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-200/50 dark:border-gray-600/50 max-w-4xl mx-auto"
                 >
                   <div className="flex items-start gap-6">
                     <div className={`flex-shrink-0 w-16 h-16 bg-gradient-to-r ${item.gradient} rounded-2xl flex items-center justify-center text-2xl shadow-xl`}>
@@ -228,15 +226,13 @@ export default function WhyChooseModern() {
                     </div>
                   </div>
                 </motion.div>
-
-
               </motion.div>
             </motion.div>
           </div>
         </section>
       ))}
 
-      {/* Final CTA Section */}
+      {/* CTA Section */}
       <section className="bg-gradient-to-br from-gray-900 via-purple-900/30 to-pink-900/30 py-24 px-4 sm:px-6 lg:px-12 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
