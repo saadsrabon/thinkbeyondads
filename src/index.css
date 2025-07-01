@@ -241,3 +241,19 @@
 body {
   @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900
 }
+
+
+/* For Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+/* For IE and Edge */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+}

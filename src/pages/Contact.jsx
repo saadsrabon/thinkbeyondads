@@ -28,20 +28,20 @@ export default function ContactSection() {
         </motion.p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 text-left">
-          <div className="bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-semibold text-[#023e8a] dark:text-[#F04B23] mb-4">
+          <div className=" dark:bg-white/5 border  border-gray-800 p-6 rounded-xl shadow-md">
+            <h3 className="text-xl font-semibold text-bg-accent mb-4">
               Schedule a Call
             </h3>
             {/* Replace below iframe with your calendar booking URL (Calendly, TidyCal, etc.) */}
             <div className="flex flex-col items-start">
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-gray-300 mb-4">
                 Pick a time that works best for you:
               </p>
               <a
                 href="https://calendly.com/thinkbeyondads/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-[#F04B23] text-white font-medium py-2 px-6 rounded-md shadow-md hover:bg-[#d93c17] transition transform hover:scale-105"
+                className="inline-block bg-bg-accent text-white font-medium py-2 px-6 rounded-md shadow-md hover:bg-[#d93c17] transition transform hover:scale-105"
               >
                 Open Booking Calendar
               </a>
@@ -57,29 +57,29 @@ export default function ContactSection() {
           </div>
 
           <div className="space-y-8">
-            <div className="bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-md">
-              <h3 className="text-xl font-semibold text-[#023e8a] dark:text-[#F04B23] mb-4">
+            <div className="bg-white/5 border border-gray-800 p-6 rounded-xl shadow-md">
+              <h3 className="text-xl font-semibold text-bg-accent mb-4">
                 Contact Info
               </h3>
               <div className="flex items-start gap-3 mb-3">
-                <Mail className="text-[#F04B23]" />
-                <span className="text-gray-700 dark:text-gray-300 ">
+                <Mail className="text-bg-accent" />
+                <span className="text-gray-300 ">
                   thinkbeyondads@gmail.com
                 </span>
               </div>
               <div className="flex items-start gap-3">
-                <Phone className="text-[#F04B23]" />
-                <span className="text-gray-700 dark:text-gray-300">
+                <Phone className="text-bg-accent" />
+                <span className="text-gray-300">
                   (832)259-7239
                 </span>
               </div>
             </div>
 
-            <div className="bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-md">
-              <h3 className="text-xl font-semibold text-[#023e8a] dark:text-[#F04B23] mb-4">
+            <div className="bg-white/5 border border-gray-800 p-6 rounded-xl shadow-md">
+              <h3 className="text-xl font-semibold text-bg-accent mb-4">
                 FAQ
               </h3>
-              <div className="space-y-4 overflow-y-scroll max-h-[600px]">
+              <div className="space-y-4 overflow-y-scroll max-h-[600px] hide-scrollbar">
                 {[
                   {
                     q: "Do you work with startups?",
@@ -135,12 +135,12 @@ export default function ContactSection() {
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: i * 0.1 }}
-                    className="bg-white dark:bg-white/5 p-4 rounded-md border border-gray-100 dark:border-gray-700 shadow-sm"
+                    className="bg-white/5 p-4 rounded-md border border-gray-700 shadow-sm"
                   >
-                    <p className="font-semibold text-[#023e8a] dark:text-[#F04B23]">
+                    <p className="font-semibold text-bg-accent">
                       {item.q}
                     </p>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">
+                    <p className="text-gray-300 text-sm mt-1">
                       {item.a}
                     </p>
                   </motion.div>

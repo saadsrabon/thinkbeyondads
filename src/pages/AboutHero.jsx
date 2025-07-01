@@ -55,7 +55,7 @@ const AboutUsHero = () => {
                 onClick={()=>navigate('/about')} 
                 className="group bg-bg-accent text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 flex items-center gap-3 relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0  group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10">Know More About Us</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
               </button>
