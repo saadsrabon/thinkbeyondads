@@ -142,7 +142,7 @@ function App() {
       {/* Keep your existing components */}
       <TrustSection/>
       <AboutUsHero/>
-      {/* <Services/> */}
+      <Services/>
       <WhyChooseModern/>
       <ContactSection/>
     </>

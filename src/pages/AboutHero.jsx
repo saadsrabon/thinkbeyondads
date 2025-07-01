@@ -82,8 +82,8 @@ const AboutUsHero = () => {
                   </div>
                 </div>
                 
-                <h3 className="text-3xl font-bold text-white mb-6">
-                  Meet Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Founders</span>
+                <h3 className="text-3xl font-bold text-white mb-6 uppercase">
+                  Meet your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"> dream team</span>
                 </h3>
                 
                 <div className="grid grid-cols-2 gap-4 text-center">

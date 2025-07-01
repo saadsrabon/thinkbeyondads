@@ -1,167 +1,240 @@
 "use client";
 
-import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Mousewheel } from "swiper/modules";
-import { motion } from "framer-motion";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/mousewheel";
-import { useEffect } from "react";
-const TextNavigationSlider = () => {
+import React, { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronRight, Play, Target, Zap, BarChart3, Plus } from "lucide-react";
+
+const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const swiperRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // You can tune breakpoint
-    };
-  
-    window.addEventListener("resize", handleResize);
-    handleResize(); // Initial check
-    return () => window.removeEventListener("resize", handleResize);
+    setIsVisible(true);
   }, []);
-  const sections = [
-    "Overview",
-    "Media Buying",
-    "Funnel Strategy",
-    "Infrastructure",
-    "Tracking",
-    "Add-ons"
-  ];
 
-  const slides = [
+  const services = [
     {
-      section: "Overview",
-      title: "Performance. Clarity. Scalability.",
-      content:
-        "All our services are engineered to drive measurable results. We help businesses grow by aligning design, technology, and strategy for scalable success.",
-      image: "https://i.ibb.co/ZpVqD9cf/vecteezy-a-person-holding-up-glasses-with-a-cityscape-in-the-background-60203803.jpg"
+      id: "overview",
+      title: "Overview",
+      heading: "We Don't Run Ads.",
+      subheading: "We Grow Businesses.",
+      description: "At ThinkBeyondAds, we focus on your bottom line by leveraging precise targeting and advanced optimizations. Our ads don't just reach your audience—they deliver exponential returns, fueling business growth every step of the way.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      icon: Target,
+      color: "from-blue-600 to-purple-600"
     },
     {
-      section: "Media Buying",
-      title: "Strategic Media Buying",
-      content:
-        "We plan and manage ad spend to maximize ROI through data-driven targeting across Google, Meta, LinkedIn, and more.",
-      image: "https://i.ibb.co/trgdm9C/marketing-ideas-share-research-planning-concept.jpg",
+      id: "media-buying",
+      title: "Media Buying",
+      heading: "Strategic Media Buying",
+      description: "We plan and manage ad spend to maximize ROI through data-driven targeting across Google, Meta, LinkedIn, and more. Our expert team ensures every dollar spent delivers measurable results through advanced audience segmentation and performance optimization.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      icon: BarChart3,
+      color: "from-purple-600 to-pink-600"
     },
     {
-      section: "Funnel Strategy",
-      title: "Funnel Strategy & Development",
-      content:
-        "We architect high-converting funnels tailored to your customer journey — from awareness to acquisition and retention.",
-      image: "https://i.ibb.co/BH83zHbS/front-view-businessman-with-colorful-cones-representing-growth.jpg",
+      id: "strategy",
+      title: "Strategy",
+      heading: "Our Proven 4-Step Process",
+      description: "At ThinkBeyondAds, we don't just focus on ads—we think beyond them. We begin with an in-depth audit, followed by continuous Google & Meta Ads management. The result? Profits that speak for themselves.",
+      steps: [
+        { number: "01", title: "Evaluate", desc: "We take a close, strategic look at your current ads, identifying strengths and areas that need improvement." },
+        { number: "02", title: "Strategize", desc: "We craft a new, tailored roadmap to ensure your ads are performing at their peak, generating maximum revenue." },
+        { number: "03", title: "Execute", desc: "As we implement your new strategy, you'll start seeing the results: more leads, more sales, or both." },
+        { number: "04", title: "Rinse & Repeat", desc: "Every three months, we revisit and refine your strategy, ensuring your ads keep delivering ongoing, sustainable growth." }
+      ],
+      cta: "Schedule your strategy call today.",
+      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      icon: Zap,
+      color: "from-green-600 to-blue-600"
     },
     {
-      section: "Infrastructure",
-      title: "Conversion Infrastructure",
-      content:
-        "We build the backend that converts — landing pages, checkout flows, CRM syncing, and performance-focused architecture.",
-      image: "https://i.ibb.co/whBkW0v7/man-holding-smartphone-with-apartment-buildings-hologram.jpg",
-    },
-    {
-      section: "Tracking",
-      title: "Conversion Tracking & Analytics",
-      content:
-        "Gain clarity with precise tracking, attribution, and real-time dashboards so you know what's working and why.",
-      image: "https://i.ibb.co/HDQ0P0tD/man-working-with-infographics-indoors.jpg",
-    },
-    {
-      section: "Add-ons",
-      title: "Optional Add-ons",
-      content:
-        "Enhance your stack with CRM integration, custom lead magnets, and creative production — everything you need to scale efficiently.",
-      image: "https://i.ibb.co/pBP4t8f1/istockphoto-1369075175-612x612.jpg",
+      id: "add-ons",
+      title: "Add-ons",
+      heading: "Tailored Solutions to Meet Your Unique Needs",
+      subheading: "(Optional)",
+      description: "At ThinkBeyondAds, we offer a variety of add-on services designed to enhance your strategy and drive results. Whether it's website redesign, social media management, creative production, or cross-platform ads, we're here to customize the perfect solution for your business. Let's create a strategy that works for you!",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      icon: Plus,
+      color: "from-orange-600 to-red-600"
     }
   ];
-
-  const handleTextNavigationClick = (index) => {
-    const sectionFirstIndex = slides.findIndex(
-      (slide) => slide.section === sections[index]
-    );
-    if (sectionFirstIndex !== -1 && swiperRef.current) {
-      swiperRef.current.slideTo(sectionFirstIndex);
-    }
-  };
 
   return (
-    <div
-      id="services"
-      className="flex flex-col lg:flex-row justify-between max-w-[1240px] items-center gap-10 mx-auto mt-12 px-4 lg:px-0 mb-12"
-    >
-      <div className="w-full lg:w-[460px] lg:h-[441px] rounded-[20px]">
-        <h1 className="font-serif text-[28px] md:text-[40px] lg:text-[64px] leading-[32px] lg:leading-[76.8px]">
-          Services
-        </h1>
-        <div className="flex flex-col justify-center space-y-1 md:space-y-3 lg:space-y-4 mt-[24px]">
-          {sections.map((section, index) => (
-            <motion.button
-              key={index}
-              onClick={() => handleTextNavigationClick(index)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`text-left transition-all duration-300 text-black flex items-center text-lg ${
-                slides[activeIndex].section === section
-                  ? "ms-1 text-[24px] md:text-[28px] lg:text-[32px] font-bold"
-                  : "text-[20px] md:text-[26px] lg:text-[30px]"
-              }`}
-            >
-              <span
-                className={`${
-                  slides[activeIndex].section === section
-                    ? "h-[20px] md:h-[27px] w-[3px] md:w-[5px] me-1 bg-[#F04B23]"
-                    : ""
-                }`}
-              ></span>
-              {section}
-            </motion.button>
-          ))}
-        </div>
+    <div id="services" className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
       </div>
 
-      <div className="w-full h-auto lg:w-[743px] lg:h-[730px] overflow-hidden">
-        <Swiper
-          direction={isMobile ? "horizontal" : "vertical"}
-          spaceBetween={30}
-          slidesPerView={1}
-          mousewheel={{ forceToAxis: true, releaseOnEdges: true }}
-          modules={[Navigation, Mousewheel]}
-          onSwiper={(swiper) => (swiperRef.current = swiper)}
-          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-          className="w-full lg:h-[780px]"
+      <div className="relative z-10 max-w-7xl mx-auto px-4 py-20">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
         >
-          {slides.map((slide, index) => (
-            <SwiperSlide key={index}>
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.5 }}
-                className="bg-[#023e8a] text-white w-full  lg:h-[730px] rounded-[20px]"
-              >
-                <div className="lg:p-[56px] md:p-14 p-4">
-                  <h2 className="font-serif text-[26px] md:text-[36px] lg:text-[48px] leading-[40px] lg:leading-[57.6px]">
-                    {slide.title}
-                  </h2>
-                  <p className="text-[16px] md:text-[18px] lg:text-[20px] leading-[20px] lg:leading-[30px] mt-6">
-                    {slide.content}
-                  </p>
-                  <div className="mt-6">
-                    <img
-                      src={slide.image}
-                      alt={slide.title}
-                      className="rounded-xl w-full object-cover"
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            </SwiperSlide>
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            Services
+          </h1>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Comprehensive solutions designed to transform your business growth
+          </p>
+        </motion.div>
+
+        {/* Navigation Pills */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-4 mb-16"
+        >
+          {services.map((service, index) => (
+            <button
+              key={service.id}
+              onClick={() => setActiveIndex(index)}
+              className={`px-8 py-4 rounded-full transition-all duration-300 font-semibold text-lg relative overflow-hidden group ${
+                activeIndex === index
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-2xl shadow-blue-500/25'
+                  : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700'
+              }`}
+            >
+              <span className="relative z-10">{service.title}</span>
+              {activeIndex === index && (
+                <motion.div
+                  layoutId="activeBackground"
+                  className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600"
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
+            </button>
           ))}
-        </Swiper>
+        </motion.div>
+
+        {/* Content Area */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeIndex}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.5 }}
+            className="grid lg:grid-cols-2 gap-16 items-center"
+          >
+            {/* Left Content */}
+            <div className="space-y-8">
+              <div className="flex items-center gap-4 mb-6">
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${services[activeIndex].color} flex items-center justify-center`}>
+                  {React.createElement(services[activeIndex].icon, { size: 32, className: "text-white" })}
+                </div>
+                <div className="h-px bg-gradient-to-r from-gray-600 to-transparent flex-1"></div>
+              </div>
+
+              <div>
+                <h2 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
+                  {services[activeIndex].heading}
+                </h2>
+                {services[activeIndex].subheading && (
+                  <h3 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    {services[activeIndex].subheading}
+                  </h3>
+                )}
+                <p className="text-xl text-gray-300 leading-relaxed mb-8">
+                  {services[activeIndex].description}
+                </p>
+              </div>
+
+              {/* Strategy Steps */}
+              {services[activeIndex].steps && (
+                <div className="space-y-6">
+                  {services[activeIndex].steps.map((step, stepIndex) => (
+                    <motion.div
+                      key={stepIndex}
+                      initial={{ opacity: 0, x: -30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: stepIndex * 0.1 + 0.3 }}
+                      className="group flex gap-6 p-6 bg-gradient-to-r from-gray-800/30 to-gray-900/30 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm"
+                    >
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center font-bold text-lg">
+                          {step.number}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold mb-2 text-white group-hover:text-blue-300 transition-colors">
+                          {step.title}
+                        </h4>
+                        <p className="text-gray-400 leading-relaxed">
+                          {step.desc}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              )}
+
+              {/* CTA Button */}
+              {services[activeIndex].cta && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                >
+                  <button className="group bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 flex items-center gap-3">
+                    <Play className="w-5 h-5" />
+                    {services[activeIndex].cta}
+                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </motion.div>
+              )}
+            </div>
+
+            {/* Right Image */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-3xl blur-xl"></div>
+              <div className="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl overflow-hidden border border-gray-700/50 backdrop-blur-sm">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10"></div>
+                <img
+                  src={services[activeIndex].image}
+                  alt={services[activeIndex].heading}
+                  className="w-full h-[500px] object-cover relative z-10 mix-blend-overlay"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent z-20"></div>
+              </div>
+              
+              {/* Floating Elements */}
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full opacity-20 blur-xl animate-pulse"></div>
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-20 blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Progress Indicators */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          className="flex justify-center gap-3 mt-16"
+        >
+          {services.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                activeIndex === index
+                  ? 'bg-gradient-to-r from-blue-500 to-purple-500 w-8'
+                  : 'bg-gray-600 hover:bg-gray-500'
+              }`}
+            />
+          ))}
+        </motion.div>
       </div>
     </div>
   );
 };
 
-export default TextNavigationSlider;
+export default Services;
