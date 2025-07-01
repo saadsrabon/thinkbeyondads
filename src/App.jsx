@@ -53,7 +53,7 @@ function App() {
           <h1 className="text-5xl md:text-6xl font-bold text-white max-w-6xl leading-tight mb-6">
            
             <span className="relative">
-              <span className="bg-bg-accent bg-clip-text text-transparent">A Leading Digital Marketing Agency Fueling Business Growth</span>
+              <span className="bg-bg-accent bg-clip-text text-3xl md:text-4xl lg:text-6xl text-transparent line-clamp-3 lg:leading-20" ref={textRef} data-text="A Leading Digital Marketing Agency Fueling Business Growth">A Leading Digital Marketing Agency Fueling Business Growth</span>
               {/* <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-teal-500 rounded-full"></div> */}
             </span>
           </h1>

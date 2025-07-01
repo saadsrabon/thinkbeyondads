@@ -5,11 +5,11 @@ import { useNavigate } from 'react-router';
 const AboutUsHero = () => {
     const navigate = useNavigate()
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+    <section className="py-20 px-4  relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-purple-600/10 to-pink-600/10 rounded-full blur-3xl"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5"></div> */}
+      {/* <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-purple-600/10 to-pink-600/10 rounded-full blur-3xl"></div> */}
       
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -34,7 +34,7 @@ const AboutUsHero = () => {
             </div>
 
             {/* Key Stats */}
-            <div className="grid grid-cols-3 gap-6 py-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8">
               <div className="text-center p-6 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700/50 backdrop-blur-sm hover:border-blue-500/50 transition-all duration-300">
                 <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">4-6X</div>
                 <div className="text-sm text-gray-400 mt-2 font-medium">Average ROI across accounts</div>
