@@ -501,7 +501,7 @@ const Portfolio = () => {
     const currentSlideData = selectedCase.slides[currentSlide];
     
     return (
-      <div className="min-h-screen bg-gradient-to-r from-[#023E8A] to-[#0096C7] relative overflow-hidden">
+      <div className="min-h-screen  relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/5 rounded-full"></div>
@@ -583,10 +583,10 @@ const Portfolio = () => {
       {/* Hero Section */}
       <section className="relative z-10 text-center py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-b from-[#023E8A] to-[#0096C7] text-transparent bg-clip-text  mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-bg-accent   mb-6">
             Our Success Stories
           </h1>
-          <p className="text-xl  mb-8 leading-relaxed">
+          <p className="text-xl text-white  mb-8 leading-relaxed">
             Discover how we've helped businesses transform their digital presence and achieve 
             remarkable growth through strategic advertising and lead generation.
           </p>
@@ -597,13 +597,13 @@ const Portfolio = () => {
       {/* Portfolio Grid */}
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-gradient-to-b from-[#023E8A] to-[#0096C7]  text-center mb-12">Client Portfolio</h2>
+          <h2 className="text-3xl font-bold text-bg-accent  text-center mb-12">Client Portfolio</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {caseStudies.map((caseStudy) => (
               <div
                 key={caseStudy.id}
-                className="bg-gradient-to-b from-[#023E8A] to-[#0096C7] backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-white/40 transition-all hover:scale-105 cursor-pointer group"
+                className="bg-bg-accent  backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-white/40 transition-all hover:scale-105 cursor-pointer group"
                 onClick={() => selectCase(caseStudy)}
               >
                 <div className="text-center mb-6">
@@ -632,7 +632,7 @@ const Portfolio = () => {
             ))}
             
             {/* Coming Soon Cards */}
-            <div className="bg-gradient-to-b from-[#023E8A] to-[#0096C7] backdrop-blur-sm rounded-2xl p-8 border border-white/10 opacity-60">
+            <div className="bg-bg-accent backdrop-blur-sm rounded-2xl p-8 border border-white/10 opacity-60">
               <div className="text-center mb-6">
                 <div className="text-4xl mb-4">🏗️</div>
                 <h3 className="text-xl font-bold text-white mb-2">Construction Company</h3>
@@ -656,12 +656,12 @@ const Portfolio = () => {
 
       {/* CTA Section */}
       <section className="relative z-10 text-center py-20 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto bg-[#12172B] backdrop-blur-sm rounded-2xl p-12">
           <h2 className="text-3xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
-          <p className=" mb-8 text-lg">
+          <p className=" mb-8 text-lg text-gray-300">
             Stop guessing. Start generating real leads with proven strategies.
           </p>
-          <button  onClick={() => window.open('https://calendly.com/thinkbeyondads/30min')} className="bg-gradient-to-b from-[#023E8A] to-[#0096C7] text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all hover:scale-105">
+          <button  onClick={() => window.open('https://calendly.com/thinkbeyondads/30min')} className="bg-bg-accent text-white px-8 py-4 rounded-full font-semibold  hover:scale-105">
             Book Your Free Strategy Call
           </button>
         </div>

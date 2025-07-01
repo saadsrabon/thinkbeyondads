@@ -68,7 +68,7 @@ const AboutUsHero = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-3xl transform rotate-3 blur-sm"></div>
             
             {/* Main content card */}
-            <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-700/50 p-8 transform -rotate-1 hover:rotate-0 transition-all duration-500 hover:shadow-purple-500/20">
+            <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-700/50 p-8 transform -rotate-0 hover:rotate-0 transition-all duration-500 hover:shadow-purple-500/20">
               <div className="text-center space-y-8">
                 <div className="flex justify-center space-x-6 mb-8">
                   <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
