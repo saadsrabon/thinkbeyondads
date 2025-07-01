@@ -16,12 +16,12 @@ const AboutUsHero = () => {
           {/* Left Column - Content */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
-                <span className="text-blue-300 text-sm font-medium">Meet YOUR Dream Team</span>
+              <div className="inline-flex items-center px-4 py-2 bg-bg-accent rounded-full border border-bg-accent/30 backdrop-blur-sm">
+                <span className="text-white text-sm font-medium">Meet Your Dream Team</span>
               </div>
               
               <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Think Beyond Ads</span>
+                About <span className="text-transparent bg-clip-text bg-bg-accent">Think Beyond Ads</span>
               </h2>
               
               <p className="text-xl text-gray-300 leading-relaxed">
@@ -53,7 +53,7 @@ const AboutUsHero = () => {
             <div className="pt-6">
               <button 
                 onClick={()=>navigate('/about')} 
-                className="group bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 flex items-center gap-3 relative overflow-hidden"
+                className="group bg-bg-accent text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 flex items-center gap-3 relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10">Know More About Us</span>

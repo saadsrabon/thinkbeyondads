@@ -73,7 +73,7 @@ export default function WhyChooseModern() {
   return (
     <div ref={containerRef}>
       {/* Original Intro Section */}
-      <section className="bg-white dark:bg-gray-950 py-24 px-4 sm:px-6 lg:px-12 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-purple-900/20 via-purple-800/10 to-pink-900/20 py-42 px-4 sm:px-6 lg:px-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -81,7 +81,7 @@ export default function WhyChooseModern() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 relative">
+            <h2 className="text-4xl md:text-6xl font-bold text-bg-accent mb-6 relative">
               Why Choose Us
               <motion.div
                 animate={{ rotate: 360 }}
@@ -91,7 +91,7 @@ export default function WhyChooseModern() {
                 ✨
               </motion.div>
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-xl text-white max-w-3xl mx-auto mb-12 leading-relaxed">
               Strategic, performance-focused, and purpose-built — we engineer brand growth with clarity and confidence.
             </p>
           </motion.div>
@@ -200,7 +200,7 @@ export default function WhyChooseModern() {
                   {item.title}
                 </h2>
                 
-                <p className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-12 leading-relaxed max-w-4xl mx-auto font-light">
+                <p className="text-2xl md:text-3xl text-bg-accent dark:text-gray-300 mb-12 leading-relaxed max-w-4xl mx-auto font-light">
                   {item.description}
                 </p>
                 

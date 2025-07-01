@@ -3,6 +3,8 @@ import TrustSection from "./components/TrustSection";
 import AboutUsHero from "./pages/AboutHero";
 import WhyChooseModern from "./pages/whyChoose";
 import ContactSection from "./pages/Contact";
+import Service from "./Page/Service/Service";
+import Services from "./pages/Services";
 
 function App() {
   const textRef = useRef(null);
