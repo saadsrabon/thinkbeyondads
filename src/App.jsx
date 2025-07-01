@@ -44,8 +44,8 @@ function App() {
         {/* Hero Content */}
         <div className="relative z-10 max-w-5xl mx-auto">
           {/* Badge */}
-          <div className="mb-6 inline-flex items-center px-4 py-2 rounded-full bg-bg-accent   text-white text-sm font-semibold shadow-lg">
-            <span className="mr-2">🚀</span>
+          <div className="mb-6 inline-flex items-center px-4 py-2 rounded-full bg-bg-accent uppercase   text-white text-sm font-semibold shadow-lg">
+           
            Done the Right Way
           </div>
           
