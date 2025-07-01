@@ -52,7 +52,7 @@ const Services = () => {
       id: "add-ons",
       title: "Add-ons",
       heading: "Tailored Solutions to Meet Your Unique Needs",
-      subheading: "(Optional)",
+      subheading: "",
       description: "At ThinkBeyondAds, we offer a variety of add-on services designed to enhance your strategy and drive results. Whether it's website redesign, social media management, creative production, or cross-platform ads, we're here to customize the perfect solution for your business. Let's create a strategy that works for you!",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
       icon: Plus,
@@ -78,7 +78,7 @@ const Services = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-bg-accent bg-clip-text text-transparent">
             Services
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -99,7 +99,7 @@ const Services = () => {
               onClick={() => setActiveIndex(index)}
               className={`px-8 py-4 rounded-full transition-all duration-300 font-semibold text-lg relative overflow-hidden group ${
                 activeIndex === index
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-2xl shadow-blue-500/25'
+                  ? 'bg-bg-accent text-white shadow-2xl shadow-bg-accent/30 hover:shadow-bg-accent/50'
                   : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700'
               }`}
             >
@@ -107,7 +107,7 @@ const Services = () => {
               {activeIndex === index && (
                 <motion.div
                   layoutId="activeBackground"
-                  className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600"
+                  className="absolute inset-0 bg-bg-accent"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}
@@ -226,7 +226,7 @@ const Services = () => {
               onClick={() => setActiveIndex(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 activeIndex === index
-                  ? 'bg-gradient-to-r from-blue-500 to-purple-500 w-8'
+                  ? 'bg-bg-accent w-8'
                   : 'bg-gray-600 hover:bg-gray-500'
               }`}
             />
