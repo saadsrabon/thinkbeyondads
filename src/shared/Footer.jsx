@@ -51,7 +51,7 @@ export default function Footer() {
         {/* CTA */}
         <div className="flex flex-col">
           <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
-            Partners and Soclial Media
+            Partners and Social Media
           </h3>
           <div className="mt-4 flex ">
           <img src={PartnerBadge} alt="Google and Meta Partner" className="h-12 md:h-14 object-contain" />
