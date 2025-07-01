@@ -246,7 +246,7 @@ export default function WhyChooseModern() {
           className="max-w-4xl mx-auto"
         >
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
-            Ready to Transform Your Brand?
+            Ready to <span className="text-bg-accent">Transform Your Brand?</span>
           </h2>
           <p className="text-xl text-gray-300 mb-12 leading-relaxed">
             Experience the difference that strategic, data-driven, and scalable solutions can make for your business.
@@ -254,7 +254,7 @@ export default function WhyChooseModern() {
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-12 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 inline-flex items-center gap-3"
+            className="bg-bg-accent text-white px-12 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-bg-accent/25 transition-all duration-300 inline-flex items-center gap-3"
           >
             <Sparkles className="w-6 h-6" />
             Get Started Today

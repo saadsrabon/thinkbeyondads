@@ -7,24 +7,24 @@ import { q } from "motion/react-client";
 
 export default function ContactSection() {
   return (
-    <section className="bg-white dark:bg-[#0f1c3f] py-24 px-6 md:px-12 lg:px-24">
+    <section className="bg-[#1A2238] py-24 px-6 md:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
+          className="text-4xl md:text-5xl  font-semibold text-white mb-4"
         >
-          Let’s Connect
+          Schedule <span className="text-bg-accent">Your Strategy Call Today</span>
+
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-12"
+          className="text-lg text-white max-w-2xl mx-auto mb-12"
         >
-          Book a quick call or drop us a message — we're here to help you grow
-          with clarity and confidence.
+          Ready to unlock your business’s potential? Book a call now, and let’s create a growth strategy that delivers results with clarity and confidence
         </motion.p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 text-left">

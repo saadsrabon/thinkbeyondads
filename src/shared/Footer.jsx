@@ -1,6 +1,7 @@
 import { FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 import FooterImage from '../assets/footer-image.png';
-import PartnerBadge from '../assets/clientlogo/logo (1).png'; // Use the correct relative path
+import PartnerBadge from '../assets/google.webp'; // Use the correct relative path
+import PartnerBadge2 from '../assets/meta.png'; // Use the correct relative path
 
 export default function Footer() {
   return (
@@ -18,9 +19,7 @@ export default function Footer() {
         </a>
 
         {/* Partner Badges */}
-        <div className="mt-8 flex justify-center">
-          <img src={PartnerBadge} alt="Google and Meta Partner" className="h-12 md:h-14 object-contain" />
-        </div>
+        
       </div>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-10">
         {/* Brand */}
@@ -28,10 +27,12 @@ export default function Footer() {
           <div>
             <img className="w-30 h-30 object-cover -mt-10 -ml-3.5" src={FooterImage} alt="Footer Logo" />
           </div>
+          
           <p className="text-sm text-gray-300 max-w-xs leading-relaxed">
             We engineer full-funnel growth systems that help high-LTV brands
             scale with strategy, not guesswork. Ads are just the beginning.
           </p>
+          
         </div>
 
         {/* Navigation */}
@@ -50,14 +51,12 @@ export default function Footer() {
         {/* CTA */}
         <div className="flex flex-col">
           <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
-            Ready to Scale?
+            Partners and Soclial Media
           </h3>
-          <a
-            href="/contact"
-            className="inline-block bg-[#FFA133] text-black font-bold uppercase text-sm px-5 py-3 rounded-md hover:bg-orange-500 transition"
-          >
-            Book a Discovery Call
-          </a>
+          <div className="mt-4 flex ">
+          <img src={PartnerBadge} alt="Google and Meta Partner" className="h-12 md:h-14 object-contain" />
+          <img src={PartnerBadge2} alt="Google and Meta Partner" className="h-12 md:h-14 object-contain" />
+        </div>
           <div className="flex space-x-4 mt-6 text-xl">
             <a href="https://linkedin.com" className="hover:text-teal-300"><FaLinkedin /></a>
             <a href="https://twitter.com" className="hover:text-teal-300"><FaTwitter /></a>
