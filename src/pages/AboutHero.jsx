@@ -91,7 +91,7 @@ const AboutUsHero = () => {
                   <div className="p-5 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-xl border border-gray-600/30 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm">
                     <div className="font-bold text-white text-lg">AJ</div>
                     <div className='flex items-center justify-center mb-2 py-4'>
-                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" className='w-24 h-24 rounded-full object-fit ' />
+                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" className='w-24 h-24 rounded-full object-fit '  style={{ objectFit: "cover" }}  />
                     </div>
                     <div className="text-sm text-blue-300 font-medium">Client Officer</div>
                   </div>
@@ -105,7 +105,7 @@ const AboutUsHero = () => {
                   <div className="p-5 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-xl border border-gray-600/30 hover:border-pink-500/50 transition-all duration-300 backdrop-blur-sm">
                     <div className="font-bold text-white text-lg">Joseph</div>
                     <div className='flex items-center justify-center mb-2 py-4'>
-                      <img src={joseph} alt="" className='w-24 h-24 rounded-full object-bottom ' />
+                      <img src={joseph} alt="" className='w-24 h-24 rounded-full object-bottom '  style={{ objectFit: "cover" }}  />
                     </div>
                     <div className="text-sm text-pink-300 font-medium">Growth Officer</div>
                   </div>
