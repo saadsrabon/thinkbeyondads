@@ -128,9 +128,9 @@ const Services = () => {
             {/* Left Content */}
             <div className="space-y-8">
               <div className="flex items-center gap-4 mb-6">
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${services[activeIndex].color} flex items-center justify-center`}>
+                {/* <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${services[activeIndex].color} flex items-center justify-center`}>
                   {React.createElement(services[activeIndex].icon, { size: 32, className: "text-white" })}
-                </div>
+                </div> */}
                 <div className="h-px bg-gradient-to-r from-gray-600 to-transparent flex-1"></div>
               </div>
 

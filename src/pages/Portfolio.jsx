@@ -312,7 +312,7 @@ const Portfolio = () => {
         return (
           <div className="space-y-8">
             <div className="text-center">
-              <div className="text-6xl mb-4">{selectedCase.icon}</div>
+              {/* <div className="text-6xl mb-4">{selectedCase.icon}</div> */}
               <h2 className="text-3xl font-bold text-white mb-2">{selectedCase.title}</h2>
               <p className="text-blue-100 text-lg">{slide.content.industry}</p>
             </div>
@@ -607,7 +607,7 @@ const Portfolio = () => {
                 onClick={() => selectCase(caseStudy)}
               >
                 <div className="text-center mb-6">
-                  <div className="text-4xl mb-4">{caseStudy.icon}</div>
+                  {/* <div className="text-4xl mb-4">{caseStudy.icon}</div> */}
                   <h3 className="text-xl font-bold text-white mb-2">{caseStudy.title}</h3>
                   <p className="text-blue-200 text-sm">{caseStudy.industry}</p>
                 </div>
@@ -634,7 +634,7 @@ const Portfolio = () => {
             {/* Coming Soon Cards */}
             <div className="bg-bg-accent backdrop-blur-sm rounded-2xl p-8 border border-white/10 opacity-60">
               <div className="text-center mb-6">
-                <div className="text-4xl mb-4">🏗️</div>
+                {/* <div className="text-4xl mb-4">🏗️</div> */}
                 <h3 className="text-xl font-bold text-white mb-2">Construction Company</h3>
                 <p className="text-blue-200 text-sm">Coming Soon</p>
               </div>

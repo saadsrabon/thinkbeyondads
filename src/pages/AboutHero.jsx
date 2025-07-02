@@ -34,7 +34,7 @@ const AboutUsHero = () => {
             </div>
 
             {/* Key Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8">
+            {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8">
               <div className="text-center p-6 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700/50 backdrop-blur-sm hover:border-blue-500/50 transition-all duration-300">
                 <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">4-6X</div>
                 <div className="text-sm text-gray-400 mt-2 font-medium">Average ROI across accounts</div>
@@ -47,7 +47,7 @@ const AboutUsHero = () => {
                 <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">300+</div>
                 <div className="text-sm text-gray-400 mt-2 font-medium">Businesses helped grow</div>
               </div>
-            </div>
+            </div> */}
 
             {/* CTA Button */}
             <div className="pt-6">
@@ -70,7 +70,7 @@ const AboutUsHero = () => {
             {/* Main content card */}
             <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-700/50 p-8 transform -rotate-0 hover:rotate-0 transition-all duration-500 hover:shadow-purple-500/20">
               <div className="text-center space-y-8">
-                <div className="flex justify-center space-x-6 mb-8">
+                {/* <div className="flex justify-center space-x-6 mb-8">
                   <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
                     <Users className="w-7 h-7 text-white" />
                   </div>
@@ -80,7 +80,7 @@ const AboutUsHero = () => {
                   <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
                     <TrendingUp className="w-7 h-7 text-white" />
                   </div>
-                </div>
+                </div> */}
                 
                 <h3 className="text-3xl font-bold text-white mb-6 uppercase">
                   Meet your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"> dream team</span>

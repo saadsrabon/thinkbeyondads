@@ -71,7 +71,7 @@ export default function WhyChooseModern() {
       {benefits.map((item, index) => (
         <section
           key={index}
-          className={`min-h-screen px-4 sm:px-6 lg:px-12 py-24 bg-gradient-to-br ${item.bgGradient} flex items-center justify-center`}
+          className={`min-h-screen px-4 sm:px-6 lg:px-12 py-16 bg-gradient-to-br ${item.bgGradient} flex items-center justify-center`}
         >
           <motion.div
             initial={{ opacity: 0, y: 100 }}
@@ -81,7 +81,7 @@ export default function WhyChooseModern() {
             className="max-w-6xl mx-auto text-center"
           >
             <div className="flex justify-center mb-8">
-              <div className={`relative w-20 h-20 rounded-full bg-gradient-to-r ${item.gradient} p-1`}>
+              {/* <div className={`relative w-20 h-20 rounded-full bg-gradient-to-r ${item.gradient} p-1`}>
                 <div className="w-full h-full bg-white dark:bg-gray-900 rounded-full flex items-center justify-center relative text-3xl">
                   {item.icon}
                   <motion.div
@@ -94,7 +94,7 @@ export default function WhyChooseModern() {
                     <Check className="w-4 h-4 text-white" />
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <h2 className={`text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent leading-tight`}>

@@ -75,7 +75,7 @@ export default function Navbar() {
       {/* Fixed Top Bar */}
       <div className="fixed top-0 left-0 w-full z-50">
         {/* Testimonial Bar */}
-        <div className="bg-bg-dark text-text-inverse w-full py-2 px-6 sm:px-12 overflow-hidden">
+        <div className="bg-bg-dark hidden md:flex items-center text-text-inverse w-full py-2 px-6 sm:px-12 overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}

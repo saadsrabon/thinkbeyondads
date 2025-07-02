@@ -33,7 +33,7 @@ function App() {
   
   return (
     <>
-      <section className="min-h-screen flex flex-col items-center justify-center text-center  px-4 pt-32 relative overflow-hidden mt-6 pb-32">
+      <section className="min-h-screen flex flex-col items-center justify-center text-center  px-4 pt-4 relative overflow-hidden mt-6 pb-32">
         {/* Background decorative elements */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
