@@ -105,7 +105,7 @@ const AboutUsHero = () => {
                   <div className="p-5 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-xl border border-gray-600/30 hover:border-pink-500/50 transition-all duration-300 backdrop-blur-sm">
                     <div className="font-bold text-white text-lg">Joseph</div>
                     <div className='flex items-center justify-center mb-2 py-4'>
-                      <img src={joseph} alt="" className='w-24 h-24 rounded-full object-bottom '  style={{ objectFit: "cover" }}  />
+                      <img src={joseph} alt="" className='w-24 h-24 rounded-full  '  style={{ objectFit: "cover" }}  />
                     </div>
                     <div className="text-sm text-pink-300 font-medium">Growth Officer</div>
                   </div>
