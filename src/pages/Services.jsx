@@ -3,7 +3,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, Play, Target, Zap, BarChart3, Plus } from "lucide-react";
-
+import one from "../assets/results/NailsandBlinks -Results 1.png"
+import two from "../assets/results/NailsandBlinks -Results 2.png"
+import three from "../assets/results/NailsandBlinks -Results.png"
 const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -19,7 +21,7 @@ const Services = () => {
       heading: "We Don't Run Ads.",
       subheading: "We Grow Businesses.",
       description: "At ThinkBeyondAds, we focus on your bottom line by leveraging precise targeting and advanced optimizations. Our ads don't just reach your audience—they deliver exponential returns, fueling business growth every step of the way.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      image: one,
       icon: Target,
       color: "from-blue-600 to-purple-600"
     },
@@ -28,7 +30,7 @@ const Services = () => {
       title: "Media Buying",
       heading: "Strategic Media Buying",
       description: "We plan and manage ad spend to maximize ROI through data-driven targeting across Google, Meta, LinkedIn, and more. Our expert team ensures every dollar spent delivers measurable results through advanced audience segmentation and performance optimization.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      image: two,
       icon: BarChart3,
       color: "from-purple-600 to-pink-600"
     },
@@ -44,7 +46,7 @@ const Services = () => {
         { number: "04", title: "Rinse & Repeat", desc: "Every three months, we revisit and refine your strategy, ensuring your ads keep delivering ongoing, sustainable growth." }
       ],
       cta: "Schedule your strategy call today.",
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      image: three,
       icon: Zap,
       color: "from-green-600 to-blue-600"
     },
@@ -202,6 +204,7 @@ const Services = () => {
                   src={services[activeIndex].image}
                   alt={services[activeIndex].heading}
                   className="w-full h-[500px] object-cover relative z-10 mix-blend-overlay"
+                  style={{ objectPosition: "0% 50%", objectFit: "cover" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent z-20"></div>
               </div>

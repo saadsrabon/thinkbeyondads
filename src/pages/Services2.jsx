@@ -3,7 +3,9 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, Play } from "lucide-react";
-
+import one from "../assets/results/NailsandBlinks -Results 1.png"
+import two from "../assets/results/NailsandBlinks -Results 2.png"
+import three from "../assets/results/NailsandBlinks -Results.png"
 const Services2 = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -19,7 +21,7 @@ const Services2 = () => {
       subheading: "We Grow Businesses.",
       description:
         "At ThinkBeyondAds, we focus on your bottom line by leveraging precise targeting and advanced optimizations...",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f...",
+      image: one,
       color: "from-blue-600 to-purple-600",
     },
     {
@@ -28,7 +30,7 @@ const Services2 = () => {
       heading: "Strategic Media Buying",
       description:
         "We plan and manage ad spend to maximize ROI through data-driven targeting...",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib...",
+      image: two,
       color: "from-purple-600 to-pink-600",
     },
     {
@@ -44,7 +46,7 @@ const Services2 = () => {
         { number: "04", title: "Rinse & Repeat", desc: "Refining every 3 months..." }
       ],
       cta: "Schedule your strategy call today.",
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib...",
+      image: three,
       color: "from-green-600 to-blue-600",
     },
     {
@@ -59,7 +61,7 @@ const Services2 = () => {
   ];
 
   return (
-    <div id="services" className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+    <div id="services" className="block md:hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 py-20 text-center">
         <motion.h1
@@ -134,7 +136,8 @@ const Services2 = () => {
                 <img
                   src={service.image}
                   alt={service.heading}
-                  className="w-full h-[500px] object-cover mix-blend-overlay relative z-10"
+                  className="w-full h-[500px]  mix-blend-overlay relative z-10"
+                  style={{ objectPosition: "0% 50%", objectFit: "cover" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-20"></div>
               </div>
