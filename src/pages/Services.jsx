@@ -61,7 +61,7 @@ const Services = () => {
   ];
 
   return (
-    <div id="services" className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
+    <div id="services" className="min-h-screen bg-gradient-to-br hidden md:block from-gray-900 via-gray-800 to-black text-white overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{

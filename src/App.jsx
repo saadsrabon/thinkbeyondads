@@ -5,6 +5,7 @@ import WhyChooseModern from "./pages/whyChoose";
 import ContactSection from "./pages/Contact";
 import Service from "./Page/Service/Service";
 import Services from "./pages/Services";
+import Services2 from "./pages/Services2";
 
 function App() {
   const textRef = useRef(null);
@@ -142,7 +143,8 @@ function App() {
       {/* Keep your existing components */}
       <TrustSection/>
       <AboutUsHero/>
-      <Services/>
+      <Services />
+      <Services2/>
       <WhyChooseModern/>
       <ContactSection/>
     </>

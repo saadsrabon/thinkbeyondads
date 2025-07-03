@@ -88,7 +88,7 @@ const AboutUs = () => {
                   {/* Front of card */}
                   <div className="absolute inset-0 w-full h-full backface-hidden bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl shadow-lg flex flex-col items-center justify-center text-white p-6">
                     <div className='flex items-center justify-center mb-2 py-4'>
-                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" className='w-24 h-24 rounded-full object-fit ' />
+                      {/* <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" className='w-24 h-24 rounded-full object-fit ' /> */}
                     </div>
                     <h3 className="text-xl font-bold mb-2">AJ</h3>
                     <p className="text-sm opacity-90 text-center">Chief Client Officer & Media Strategy Lead</p>
@@ -109,7 +109,7 @@ const AboutUs = () => {
                   {/* Front of card */}
                   <div className="absolute inset-0 w-full h-full backface-hidden bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl shadow-lg flex flex-col items-center justify-center text-white p-6">
                     <div className='flex items-center justify-center mb-2 py-4'>
-                      <img src={daniel} alt="" className='w-24 h-24 rounded-full object-fit '  style={{ objectFit: "cover" }}  />
+                      <img src={daniel} alt="" className='w-24 h-24 rounded-full object-fit '  style={{ objectFit: "cover" , objectPosition: "65%" }}  />
                     </div>
                     <h3 className="text-xl font-bold mb-2">Daniel</h3>
                     <p className="text-sm opacity-90 text-center">Chief Operations Officer & Sales Team Lead</p>
@@ -130,7 +130,7 @@ const AboutUs = () => {
                   {/* Front of card */}
                   <div className="absolute inset-0 w-full h-full backface-hidden bg-gradient-to-br from-green-500 to-teal-500 rounded-xl shadow-lg flex flex-col items-center justify-center text-white p-6">
                     <div className='flex items-center justify-center mb-2 py-4'>
-                      <img src={joseph} alt="" className='w-24 h-24 rounded-full object-fit ' style={{ objectFit: "cover" }} />
+                      <img src={joseph} alt="" className='w-24 h-24 rounded-full object-fit aspect-auto ' style={{  objectPosition: "10% " }} />
                     </div>
                     <h3 className="text-xl font-bold mb-2">Joseph</h3>
                     <p className="text-sm opacity-90 text-center">Chief Growth Officer & Lead Generation Expert</p>
@@ -151,7 +151,7 @@ const AboutUs = () => {
                   {/* Front of card */}
                   <div className="absolute inset-0 w-full h-full backface-hidden bg-gradient-to-br from-orange-500 to-red-500 rounded-xl shadow-lg flex flex-col items-center justify-center text-white p-6">
                     <div className='flex items-center justify-center mb-2 py-4'>
-                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" className='w-24 h-24 rounded-full object-fit ' />
+                      {/* <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" className='w-24 h-24 rounded-full object-fit ' /> */}
                     </div>
                     <h3 className="text-xl font-bold mb-2">Amr</h3>
                     <p className="text-sm opacity-90 text-center">Chief Business Development Officer & Lead Strategist</p>
