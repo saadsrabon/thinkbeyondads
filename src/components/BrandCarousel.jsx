@@ -34,15 +34,10 @@ const logos = [
 export default function BrandCarousel() {
   return (
     <div className="overflow-hidden py-6 relative mt-4 w-full">
-      <motion.div
+      <div
       style={{ willChange: "transform" }}
-        className="flex gap-16 whitespace-nowrap w-max transform-gpu"
-        animate={{ x: ["0%", "-100%"] }} // scroll half way since we duplicate
-        transition={{
-          repeat: Infinity,
-          duration: 35,
-          ease: "linear",
-        }}
+        className="carousel-track flex gap-16 whitespace-nowrap w-max transform-gpu animate-scroll"
+        
       >
         {[...logos, ...logos].map((logo, idx) => (
           <img
@@ -53,7 +48,7 @@ export default function BrandCarousel() {
             className="h-12 opacity-80 object-contain"
           />
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }
