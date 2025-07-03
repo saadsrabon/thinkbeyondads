@@ -36,7 +36,7 @@ export default function BrandCarousel() {
     <div className="overflow-hidden py-6 relative mt-4 w-full">
       <div
       style={{ willChange: "transform" }}
-        className="carousel-track flex gap-16 whitespace-nowrap w-max transform-gpu animate-scroll"
+        className="carousel-track flex gap-16 whitespace-nowrap w-max"
         
       >
         {[...logos, ...logos].map((logo, idx) => (
@@ -45,7 +45,8 @@ export default function BrandCarousel() {
             src={logo}
             alt="brand"
             loading="lazy"
-            className="h-12 opacity-80 object-contain"
+            draggable={false}
+            className=" w-auto h-12  opacity-80 object-contain"
           />
         ))}
       </div>
