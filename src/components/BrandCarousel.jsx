@@ -39,7 +39,7 @@ export default function BrandCarousel() {
         animate={{ x: ["0%", "-100%"] }} // scroll half way since we duplicate
         transition={{
           repeat: Infinity,
-          duration: 25,
+          duration: 35,
           ease: "linear",
         }}
       >
