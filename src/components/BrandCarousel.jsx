@@ -36,10 +36,10 @@ export default function BrandCarousel() {
     <div className="overflow-hidden py-6 relative mt-4 w-full">
       <motion.div
         className="flex gap-16 whitespace-nowrap w-max"
-        animate={{ x: ["0%", "-50%"] }} // scroll half way since we duplicate
+        animate={{ x: ["0%", "-100%"] }} // scroll half way since we duplicate
         transition={{
           repeat: Infinity,
-          duration: 20,
+          duration: 25,
           ease: "linear",
         }}
       >

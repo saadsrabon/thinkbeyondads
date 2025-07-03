@@ -113,12 +113,12 @@ export default function TestimonialsSlider() {
           transition={{ duration: 0.5 }}
         >
           <div className="text-4xl text-bg-primary  mb-4">❝</div>
-          <p className="text-white text-xl font-semibold max-w-2xl mx-auto">
+          <p className="text-white  text-xl font-semibold max-w-2xl mx-auto">
             "{testimonials[index].quote}"
           </p>
-          <p className="text-sm  text-bg-primary mt-2  bg-clip-text ">
+          {/* <p className="text-sm  text-bg-primary mt-2  bg-clip-text ">
             {testimonials[index]?.name}, {testimonials[index]?.company}
-          </p>
+          </p> */}
         </motion.div>
       </AnimatePresence>
     </div>

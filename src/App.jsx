@@ -35,7 +35,7 @@ function App() {
     <>
       <section className="min-h-screen flex flex-col items-center justify-center text-center  px-4 pt-4 relative overflow-hidden mt-6 pb-32">
         {/* Background decorative elements */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 hidden md:absolute">
           <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
           <div className="absolute top-20 right-10 w-72 h-72 bg-teal-500/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
           <div className="absolute -bottom-8 left-20 w-72 h-72 bg-blue-500/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
@@ -80,7 +80,7 @@ function App() {
           {/* CTA Button */}
           <button 
             onClick={() => window.open('https://calendly.com/thinkbeyondads/30min')}  
-            className="mt-8 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 transform"
+            className="mt-8 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold md:text-lg px-8 py-4 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 transform"
           >
             Book a Call to Unlock Your Ad Potential
           </button>

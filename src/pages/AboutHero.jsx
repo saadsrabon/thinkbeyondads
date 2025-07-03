@@ -54,10 +54,10 @@ const AboutUsHero = () => {
             <div className="pt-6">
               <button 
                 onClick={()=>navigate('/about')} 
-                className="group bg-bg-accent text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 flex items-center gap-3 relative overflow-hidden"
+                className="group bg-bg-accent text-white px-5 md:px-10 py-2 md:py-5 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 flex items-center gap-3 relative overflow-hidden"
               >
                 <div className="absolute inset-0  group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative z-10">Know More About Us</span>
+                <span className="relative z-10 text-sm ">Know More About Us</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
               </button>
             </div>
@@ -87,32 +87,32 @@ const AboutUsHero = () => {
                   Meet your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"> dream team</span>
                 </h3>
                 
-                <div className="grid grid-cols-2 gap-4 text-center">
-                  <div className="p-5 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-xl border border-gray-600/30 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                  <div className="p-5 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-xl border border-gray-600/30 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm flex flex-col items-center justify-center">
                     <div className="font-bold text-white text-lg">AJ</div>
                     <div className='flex items-center justify-center mb-2 py-4'>
-                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" className='w-24 h-24 rounded-full object-fit '  style={{ objectFit: "cover" }}  />
+                      {/* <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" className='w-24 h-24 rounded-full object-fit '  style={{ objectFit: "cover" }}  /> */}
                     </div>
                     <div className="text-sm text-blue-300 font-medium">Client Officer</div>
                   </div>
                   <div className="p-5 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-xl border border-gray-600/30 hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm">
                     <div className="font-bold text-white text-lg">Daniel</div>
-                    <div className='flex items-center justify-center mb-2 py-4'>
-                      <img src={daniel} alt="" className='w-24 h-24 rounded-full object-cover' />
+                    <div className='flex justify-center items-center  mb-2 py-4 rounded-full '>
+                      <img src={daniel} alt="" className=' w-24 h-24 object-cover rounded-full object-center  ' style={{ objectPosition: "60%",zoom:"1.2"}} />
                     </div>
                     <div className="text-sm text-purple-300 font-medium">Operations Officer</div>
                   </div>
                   <div className="p-5 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-xl border border-gray-600/30 hover:border-pink-500/50 transition-all duration-300 backdrop-blur-sm">
                     <div className="font-bold text-white text-lg">Joseph</div>
                     <div className='flex items-center justify-center mb-2 py-4'>
-                      <img src={joseph} alt="" className='w-24 h-24 rounded-full  '  style={{ objectFit: "cover" }}  />
+                      <img src={joseph} alt="" className='w-24 h-24 rounded-full object-center  '  style={{  objectPosition: "-10% " ,zoom:"1.2" }}  />
                     </div>
                     <div className="text-sm text-pink-300 font-medium">Growth Officer</div>
                   </div>
-                  <div className="p-5 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-xl border border-gray-600/30 hover:border-green-500/50 transition-all duration-300 backdrop-blur-sm">
+                  <div className="p-5 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-xl border border-gray-600/30 hover:border-green-500/50 transition-all duration-300 backdrop-blur-sm flex flex-col items-center justify-center">
                     <div className="font-bold text-white text-lg">Amr</div>
                     <div className='flex items-center justify-center mb-2 py-4'>
-                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" className='w-24 h-24 rounded-full object-fit ' />
+                      {/* <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" className='w-24 h-24 rounded-full object-fit  ' /> */}
                     </div>
                     <div className="text-sm text-green-300 font-medium">Business Dev Officer</div>
                   </div>
