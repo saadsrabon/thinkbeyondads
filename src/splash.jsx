@@ -12,7 +12,7 @@ export default function SplashPage() {
           transition={{ duration: 0.8 }}
           className="text-4xl md:text-6xl font-bold leading-tight"
         >
-          We Are Down for Maintenance
+          {/* We Are Down for Maintenance */}
         </motion.h1>
 
         <motion.p
@@ -21,7 +21,7 @@ export default function SplashPage() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="text-lg md:text-xl text-gray-300"
         >
-          Sorry for the inconvenience. We're working hard to get things back up and running as soon as possible. Thank you for your patience and understanding.
+          {/* Sorry for the inconvenience. We're working hard to get things back up and running as soon as possible. Thank you for your patience and understanding. */}
         </motion.p>
 
         <motion.div
