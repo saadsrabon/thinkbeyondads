@@ -15,7 +15,7 @@ import Portfolio from './pages/Portfolio.jsx';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <Navbar />
+    {/* <Navbar /> */}
     <Routes>
       {/* <Route path="/" element={<App />} /> */}
       <Route path="/" element={<SplashPage />} />
