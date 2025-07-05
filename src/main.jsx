@@ -30,7 +30,7 @@ createRoot(document.getElementById('root')).render(
       <Route path="/contact" element={<div className='mt-'>  <Contact/></div> } />
       <Route path="/portfolio" element={<div className=''> <Portfolio/></div>} />
     </Routes>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </BrowserRouter>
   </StrictMode>,
 )
