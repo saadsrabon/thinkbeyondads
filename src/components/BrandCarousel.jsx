@@ -36,7 +36,7 @@ export default function BrandCarousel() {
     <div className="overflow-hidden py-6 relative mt-4 w-full">
       <div
       style={{ willChange: "transform" }}
-        className="carousel-track flex gap-16 whitespace-nowrap w-max"
+        className="carousel-track flex gap-8 whitespace-nowrap w-max"
         
       >
         {[...logos, ...logos].map((logo, idx) => (
