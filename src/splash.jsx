@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { RefreshCcw } from "lucide-react";
+import RedirectLoop from "./random";
 
 export default function SplashPage() {
   return (
@@ -35,6 +36,7 @@ export default function SplashPage() {
           >
             Retry <RefreshCcw className="ml-2 w-5 h-5" />
           </button> */}
+          <RedirectLoop />
         </motion.div>
       </div>
     </div>
