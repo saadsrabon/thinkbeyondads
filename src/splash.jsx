@@ -36,7 +36,7 @@ export default function SplashPage() {
           >
             Retry <RefreshCcw className="ml-2 w-5 h-5" />
           </button> */}
-          <RedirectLoop />
+          {/* <RedirectLoop /> */}
         </motion.div>
       </div>
     </div>
